@@ -1,0 +1,96 @@
+.main-right {
+  display: inline-block;
+  position: fixed;
+  top: 88px;
+  flex-direction: column;
+  align-items: stretch;
+  width: 293px;
+  height: 100vh;
+  padding: 0;
+  margin-bottom: 30px;
+  .profile-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 18px 0 10px 0;
+    .card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: auto;
+      .profile-img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+      }
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        line-height: 18px;
+        width: auto;
+        margin-left: 12px;
+      }
+    }
+  }
+  .user-recommend {
+    margin-bottom: 12px;
+    .recommend-title {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 19px;
+      width: 100%;
+      padding: 4px 0 4px;
+      margin-top: 12px;
+      p {
+        color: #262626;
+      }
+    }
+    .recommend-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      .recommend-users {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: 8px 0 8px 16px;
+        .card {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: auto;
+          .card-img {
+            position: relative;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+          }
+          .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-wrap: wrap;
+            line-height: 18px;
+            width: auto;
+            margin-left: 12px;
+          }
+        }
+        .blue {
+          width: 36px;
+        }
+      }
+    }
+  }
+}

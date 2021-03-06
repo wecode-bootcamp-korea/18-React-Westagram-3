@@ -1,0 +1,16 @@
+#story-nav {
+  display: flex;
+  align-items: center;
+  width: 612px;
+  height: 84px;
+  padding: 16px 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin-bottom: 24px;
+  background-color: #fff;
+  .profile-img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+  }
+}
