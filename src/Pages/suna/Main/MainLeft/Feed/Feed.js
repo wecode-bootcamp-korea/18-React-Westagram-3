@@ -5,11 +5,41 @@ class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
-      pw: "",
-      ready: "",
+      comment: "",
+      commentList: [],
+      click: false,
     };
   }
+
+  addComment = (e) => {
+    e.preventDefault();
+    if(this.state.click) {
+      this.setState({
+        commentList: this.state.commentList.concat([this.state.comment]),
+        click: "",
+        comment: "",
+      })
+    }
+  };
+    
+    
+
+  pressEnter = (e) => {
+    if(e.key === "Enter") {
+      this.setState({
+        commentList: this.state.commentList.concat([this.state.comment]),
+        click: "",
+        comment: "",
+      })
+    }
+  };
+
+  getInputValue = (e) => {
+    this.setState({
+      comment : e.target.value,
+      click: true,
+    });
+  };
 
   render() {
     return (
@@ -36,7 +66,6 @@ class Feed extends React.Component {
                 className="user-img"
               />
             </div>
-
             <div className="feed-footer">
               <div className="feed-reaction">
                 <div className="feed-btns">
@@ -94,6 +123,17 @@ class Feed extends React.Component {
                       className="far fa-heart comment-like comment-btn"
                     ></i>
                   </li>
+                  <li>
+                    <h3 className="user-name">goodtoseeyou</h3>
+                    &nbsp;
+                    <span className="user-comment">
+                    {this.addComment ? this.state.commentList : ""} 
+                    </span>
+                    <i
+                      aria-label="좋아요"
+                      className="far fa-heart comment-like comment-btn"
+                    ></i>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -105,9 +145,13 @@ class Feed extends React.Component {
                 placeholder="댓글 달기..."
                 id="comment"
                 className="comment"
-                autoComplete="off"
+                autoComplete="off"                 onChange={this.getInputValue}
+                onKeyPress={this.pressEnter}
+                value={this.state.comment}
               ></textarea>
-              <button type="submit" className="comment-submit blue">게시</button>
+              <button type="submit"
+              className={this.state.click ? "comment-submit blue" : "comment-submit gray disabled"}
+              onClick={this.addComment}>게시</button>
             </form>
           </article>
         </section>
