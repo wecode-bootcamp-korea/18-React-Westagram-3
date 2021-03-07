@@ -2,6 +2,15 @@ import React from 'react';
 import './Feed.scss';
 
 class Feed extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      id: "",
+      pw: "",
+      ready: "",
+    };
+  }
+  
   render() {
     return (
         <section className="feeds">
