@@ -10,7 +10,7 @@ class Feed extends React.Component {
       ready: "",
     };
   }
-  
+
   render() {
     return (
         <section className="feeds">
@@ -58,6 +58,7 @@ class Feed extends React.Component {
             <div className="feed-article">
               <div className="feed-content">
                 <h3 className="user-name">wecode-bootcamp</h3>
+                &nbsp;
                 <p className="feed-desc">
                   "위코드는 단순 교육 업체가 아닌 개발자 커뮤니티 입니다.
                   Wecode에서 배우고 저는 총 5개 회사에서 오퍼를 받았습니다." -
@@ -68,6 +69,7 @@ class Feed extends React.Component {
                 <ul className="comments-list">
                   <li>
                     <h3 className="user-name">hellowecode</h3>
+                    &nbsp;
                     <span className="user-comment">댓글1치키차카초코초코초</span>
                     <i
                       aria-label="좋아요"
@@ -76,6 +78,7 @@ class Feed extends React.Component {
                   </li>
                   <li>
                     <h3 className="user-name">byevscode</h3>
+                    &nbsp;
                     <span className="user-comment">댓글2치키차카초코초코초</span>
                     <i
                       aria-label="좋아요"
@@ -84,6 +87,7 @@ class Feed extends React.Component {
                   </li>
                   <li>
                     <h3 className="user-name">goodtoseeyou</h3>
+                    &nbsp;
                     <span className="user-comment">댓글3치키차카초코초코초</span>
                     <i
                       aria-label="좋아요"
