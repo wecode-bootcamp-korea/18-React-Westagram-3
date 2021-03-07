@@ -123,17 +123,19 @@ class Feed extends React.Component {
                       className="far fa-heart comment-like comment-btn"
                     ></i>
                   </li>
-                  <li>
-                    <h3 className="user-name">goodtoseeyou</h3>
-                    &nbsp;
-                    <span className="user-comment">
-                    {this.addComment ? this.state.commentList : ""} 
-                    </span>
-                    <i
-                      aria-label="좋아요"
-                      className="far fa-heart comment-like comment-btn"
-                    ></i>
-                  </li>
+                    {this.state.commentList.map((comm) => {
+                      return (
+                      <li>
+                      <h3 className="user-name">wecoder18th</h3>
+                      &nbsp;
+                      <span className="user-comment"> 
+                      {comm} </span>
+                      <i
+                        aria-label="좋아요"
+                        className="far fa-heart comment-like comment-btn"
+                      ></i>
+                    </li>)
+                    })}
                 </ul>
               </div>
             </div>
