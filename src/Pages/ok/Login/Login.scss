@@ -1,4 +1,19 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+}
 .login {
+  h1.logo {
+    font-family: "Lobster", cursive;
+  }
+  input,
+  button {
+    width: 100%;
+  }
   display: flex;
   justify-content: center;
   align-items: center;

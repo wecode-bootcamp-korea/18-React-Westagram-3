@@ -30,7 +30,7 @@ class LoginOk extends React.Component {
         checkValidation: false,
       });
     return e.keyCode === 13 && this.state.checkValidation
-      ? this.props.history.push("/main")
+      ? this.props.history.push("/main-ok")
       : false;
   };
   render() {
@@ -59,11 +59,11 @@ class LoginOk extends React.Component {
               onKeyUp={this.LoginKeyUp}
             />
             <Link
-              onClick={this.LoginClick}
-              to="main"
+              to="/main-ok"
               className={
                 "login-button " + (this.state.checkValidation ? "active" : "")
               }
+              onClick={this.LoginClick}
             >
               로그인
             </Link>
