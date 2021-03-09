@@ -1,3 +1,5 @@
+@import "./_Variable.scss";
+
 .main {
   background: #fafafafa;
   h1.logo {
@@ -108,6 +110,25 @@
             transform: rotate(360deg);
           }
         }
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .main {
+    .main-section {
+      .main-right {
+        display: none;
+      }
+      .main-content {
+        padding: 30px 20px;
+      }
+      .content-wrap {
+        margin: 0 auto;
+      }
+      .scroll-trigger {
+        margin: 0 auto;
       }
     }
   }

@@ -3,7 +3,6 @@ import Nav from "./Components/Nav/Nav";
 import MainContent from "./Components/MainContent/MainContent";
 import UserData from "./Data/UserData";
 import "./Main.scss";
-import "./Mobile.scss";
 
 class MainOk extends React.Component {
   render() {

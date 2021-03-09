@@ -1,3 +1,5 @@
+@import "../../_Variable.scss";
+
 .main-nav {
   position: fixed;
   top: 0;
@@ -179,6 +181,29 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .main-nav {
+    .nav-wrap {
+      max-width: 935px;
+    }
+  }
+}
+@media #{$mobile} {
+  .main-nav {
+    .nav-wrap {
+      .search-wrap {
+        display: none;
+      }
+      .sub-wrap {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
       }
     }
   }
