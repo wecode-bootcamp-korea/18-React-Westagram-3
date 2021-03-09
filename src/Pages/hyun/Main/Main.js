@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from 'react-router-dom';
 // import { withRouter } from 'react-router-dom';
-import Reply from './Reply/Reply'
+import Comments from './Comments/Comments'
 import './Main.scss';
 
 
@@ -45,7 +45,7 @@ class MainHyun extends React.Component {
                             <span className="dots">···</span>
                         </div>
                         <img alt="doowop79 피드" src="https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/s640x640/153554778_1134026250362683_832804551239084161_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_cat=107&_nc_ohc=8d1JLyQb7ksAX-8EFlv&tp=1&oh=d7ffb9595c9e2f142e9589816fa593b4&oe=6061376C"  />
-                        <Reply />
+                        <Comments />
                     </div>
                     <div className="feed feed2">
                         <div className="profile">
@@ -54,14 +54,7 @@ class MainHyun extends React.Component {
                             <span className="dots">···</span>
                         </div>
                         <img alt="roary_city 피드" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/155016661_1342889699417284_1228962152844862307_n.jpg?tp=1&_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_cat=104&_nc_ohc=d2f_0fpydEcAX9kow_Y&oh=d1e9f5f340dc6b43eff43e037f819ba5&oe=60653DCB"  />
-                        <div className="replyBox">
-                            <ul>
-                                <li><span className="userId">좋아요 1971개</span></li>
-                                <li><span className="userId">lynnka_b</span>Adorable!! I love u😍😍😍</li>
-                                <li><span className="userId">irinacramer</span>💖</li>
-                            </ul> 
-                        </div>
-                        <input className="replyInput" type="text" placeholder="댓글 달기..."  />
+                      <Comments />
                     </div>
                 </section>
             </article>

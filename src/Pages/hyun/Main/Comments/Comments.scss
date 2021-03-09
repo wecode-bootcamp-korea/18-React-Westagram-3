@@ -1,4 +1,4 @@
-.Reply {
+.Comments {
   * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +6,7 @@
   color: #424242;
 }
 
-.replyBox {
+.CommentsBox {
   height: auto;
   padding: 10px;
   ul {
@@ -22,7 +22,7 @@
   font-weight: 700;
 }
 
-.replyInput {
+.CommentInput {
   width: 100%;
   height: 45px;
   padding: 10px;
