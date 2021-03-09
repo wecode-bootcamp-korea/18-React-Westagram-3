@@ -27,8 +27,8 @@ class Feeds extends Component {
       commentList: this.state.commentList.concat({
         comment: this.state.inputText,
       }),
+      inputText: "",
     });
-    // console.log("handlePost : ", this.state.postText);
   };
   render() {
     console.log("this.state.commentList: ", this.state.commentList);
@@ -58,7 +58,9 @@ class Feeds extends Component {
           </div>
           <div className="feed__commentList inPad">
             <div className="comments">
-              <Comment data={this.state.postText} />
+              {this.state.commentList.map((comment) => {
+                return <Comment data={comment.comment} />;
+              })}
             </div>
           </div>
           <div className="feed__update">1일 전</div>
