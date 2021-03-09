@@ -21,14 +21,11 @@ class LoginOk extends React.Component {
     return !this.state.checkValidation ? e.preventDefault() : true;
   };
   LoginKeyUp = e => {
-    if (this.state.email.includes("@") && this.state.password.length >= 5) {
-      this.setState({
-        checkValidation: true,
-      });
-    } else
-      this.setState({
-        checkValidation: false,
-      });
+    const isValid =
+      this.state.email.includes("@") && this.state.password.length >= 5;
+    this.setState({
+      checkValidation: isValid ? true : false,
+    });
     return e.keyCode === 13 && this.state.checkValidation
       ? this.props.history.push("/main-ok")
       : false;

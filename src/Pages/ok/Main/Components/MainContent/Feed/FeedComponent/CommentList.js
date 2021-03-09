@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,15 +17,12 @@ class CommentList extends Component {
       heartClick: !this.state.heartClick,
     });
   };
-  componentWillUnmount() {
-    console.log("자식의 자식 componentWillUnmount");
-  }
   render() {
     const { name, comment } = this.props.data;
     return (
       <li className="list-other">
         <p className="comment-wrap">
-          <a className="other-main">{name}</a>
+          <Link className="other-main">{name}</Link>
           <span className="comment-text">{comment}</span>
         </p>
         <FontAwesomeIcon

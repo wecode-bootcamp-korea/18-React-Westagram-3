@@ -23,14 +23,16 @@
 }
 @media (max-width: 650px) {
   .main-nav {
-    .search-wrap {
-      display: none;
-    }
-    .sub-wrap {
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
+    .nav-wrap {
+      .search-wrap {
+        display: none;
+      }
+      .sub-wrap {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+      }
     }
   }
 }

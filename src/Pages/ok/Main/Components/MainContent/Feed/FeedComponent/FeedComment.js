@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import {
   faHeart as farHeart,
   faComment,
@@ -15,14 +16,13 @@ import "./FeedComment.scss";
 class FeedComment extends Component {
   constructor(props) {
     super(props);
-    console.log("자식 constructor");
   }
   state = {
     heartClick: false,
     popActive: false,
     inputValueCheck: false,
     moreBtnToggle: false,
-    deleteCommentId: 0,
+    deleteCommentId: null,
     commentValue: "",
     likes: this.props.data.likes,
     comments: this.props.data.comments,
@@ -88,17 +88,7 @@ class FeedComment extends Component {
       ),
     });
   };
-  componentDidMount() {
-    console.log("자식 componentDidMount");
-  }
-  componentDidUpdate() {
-    console.log("자식 componentDidUpdate");
-  }
-  componentWillUnmount() {
-    console.log("자식 componentWillUnmount");
-  }
   render() {
-    console.log("자식 render");
     const { commentData } = this.props.data;
     return (
       <>
@@ -129,23 +119,23 @@ class FeedComment extends Component {
           >
             <li className="list-like">
               <span>
-                <a className="like-main">{commentData.likeMain}</a>
+                <Link className="like-main">{commentData.likeMain}</Link>
               </span>
               님 외
               <span>
-                <a className="like-other"> {this.state.likes}명</a>이
+                <Link className="like-other"> {this.state.likes}명</Link>이
                 좋아합니다.
               </span>
             </li>
             <li className="list-user">
               <p>
-                <a className="user-main">{commentData.user}</a>
+                <Link className="user-main">{commentData.user}</Link>
                 <span>{commentData.userComment}</span>
               </p>
             </li>
             <li className="list-comments">
               <span className="gray">
-                <a>댓글 {this.state.comments.length}개 모두 보기</a>
+                <Link>댓글 {this.state.comments.length}개 모두 보기</Link>
               </span>
             </li>
             {this.state.comments.length > 0
@@ -177,14 +167,14 @@ class FeedComment extends Component {
             onChange={this.commentValueChange}
             onKeyPress={this.addComment}
           ></input>
-          <a
+          <Link
             className={
               "add-btn " + (this.state.inputValueCheck ? "active" : "")
             }
             onClick={this.addComment}
           >
             게시
-          </a>
+          </Link>
         </div>
         <div className={"popup-wrap " + (this.state.popActive ? "active" : "")}>
           <ul className="popup-select">

@@ -44,42 +44,36 @@
       }
     }
   }
-  .story-button-wrap {
+  .story-button {
     position: absolute;
-    display: flex;
-    justify-content: space-between;
-    height: 40px;
     top: 50%;
-    left: 0;
-    right: 0;
     transform: translateY(-50%);
-    .story-button {
-      display: inline-block;
-      height: 100%;
-      background: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_2x_9e0e7ad2c7e4.png/9e0e7ad2c7e4.png)
-        no-repeat;
-      background-size: 510px 477px;
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-      &.story-prev {
-        width: 42px;
-        background-position: -291px -225px;
-      }
-      &.story-next {
-        width: 49px;
-        background-position: -290px -270px;
-      }
-      &.story-prev.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-      }
-      &.story-next.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-      }
+    height: 42px;
+    background: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_2x_9e0e7ad2c7e4.png/9e0e7ad2c7e4.png)
+      no-repeat;
+    background-size: 510px 477px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s;
+    &.story-prev {
+      left: 0;
+      width: 42px;
+      background-position: -291px -225px;
+    }
+    &.story-next {
+      right: 0;
+      width: 49px;
+      background-position: -290px -270px;
+    }
+    &.story-prev.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+    &.story-next.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
     }
   }
 }

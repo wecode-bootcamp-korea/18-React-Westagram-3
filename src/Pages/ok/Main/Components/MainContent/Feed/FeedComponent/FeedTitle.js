@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./FeedTitle.scss";
+
 class FeedTitle extends Component {
   constructor(props) {
     super(props);

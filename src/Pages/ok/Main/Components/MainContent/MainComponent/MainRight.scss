@@ -5,6 +5,9 @@
   transform: translateX(-50%);
   width: 293px;
   height: 100%;
+  a {
+    text-decoration: none;
+  }
   .right-user {
     display: flex;
     align-items: center;
@@ -19,8 +22,6 @@
       color: #1d99f6;
     }
     .user-info {
-      display: flex;
-      flex-direction: column;
       flex: 1;
       line-height: 18px;
       text-indent: 20px;
@@ -30,6 +31,7 @@
         color: #262626;
       }
       span {
+        display: block;
         color: #a1a1a1;
       }
     }
@@ -69,8 +71,6 @@
         color: #1d99f6;
       }
       .list-info {
-        display: flex;
-        flex-direction: column;
         flex: 1;
         font-size: 16px;
         text-indent: 10px;
@@ -86,6 +86,7 @@
         > span {
           font-size: 12px;
           color: #8e8e8e;
+          display: block;
         }
       }
     }

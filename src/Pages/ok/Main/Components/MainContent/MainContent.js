@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import StoryList from "./MainComponent/StoryList";
 import Feed from "./Feed/Feed";
 import MainRight from "./MainComponent/MainRight";
@@ -11,11 +11,6 @@ class MainContent extends Component {
   state = {
     FeedData: FeedData,
   };
-  componentDidMount() {
-    fetch("http://localhost:3000/data/FeedData.json", { method: "GET" })
-      .then(res => res.json())
-      .then(data => console.log(data));
-  }
   render() {
     return (
       <div className="main-content">

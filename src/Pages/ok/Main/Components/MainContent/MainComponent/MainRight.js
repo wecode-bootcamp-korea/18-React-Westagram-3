@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
 import "./MainRight.scss";
 
@@ -6,7 +7,6 @@ class MainRight extends Component {
   constructor(props) {
     super(props);
   }
-
   state = {
     notFriend: this.props.userData.filter(e => e.friend === false),
   };
@@ -19,25 +19,25 @@ class MainRight extends Component {
             alt="프로필"
           />
           <div className="user-info">
-            <a>seung_ok12</a>
+            <Link>seung_ok12</Link>
             <span>정승옥</span>
           </div>
-          <a>전환</a>
+          <Link>전환</Link>
         </div>
         <div className="right-recommend">
           <div className="recommend-title">
             <span>회원님을 위한 추천</span>
-            <a>모두 보기</a>
+            <Link>모두 보기</Link>
           </div>
           {this.state.notFriend.map((recommdendUser, index) => {
             return (
               <div key={index} className="recommend-list">
                 <img src={recommdendUser.imgUrl} alt="사이드 이미지" />
                 <div className="list-info">
-                  <a>{recommdendUser.username}</a>
+                  <Link>{recommdendUser.username}</Link>
                   <span>회원님을 팔로우합니다</span>
                 </div>
-                <a>팔로우</a>
+                <Link>팔로우</Link>
               </div>
             );
           })}

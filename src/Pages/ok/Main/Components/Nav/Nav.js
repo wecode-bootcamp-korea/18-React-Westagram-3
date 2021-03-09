@@ -47,10 +47,10 @@ class Nav extends Component {
     return (
       <nav className="main-nav">
         <div className="nav-wrap">
-          <a className="logo-wrap" href="/main">
+          <Link to={"/main-ok"} className="logo-wrap" href="/main">
             <img className="logo-img" src={logo} alt="로고" />
             <h1 className="logo">Westagram</h1>
-          </a>
+          </Link>
           <div className="search-wrap">
             <input
               id="search"

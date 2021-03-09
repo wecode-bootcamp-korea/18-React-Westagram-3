@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./FeedImg.scss";
 class FeedImg extends Component {
   constructor(props) {
@@ -53,18 +54,18 @@ class FeedImg extends Component {
           })}
         </ul>
         <div className="slide-button-wrap">
-          <a
+          <Link
             className={
               "slide-button prev " + (this.state.prevBtnActive ? "active" : "")
             }
             onClick={this.slideMove}
-          ></a>
-          <a
+          ></Link>
+          <Link
             className={
               "slide-button next " + (this.state.nextBtnActive ? "active" : "")
             }
             onClick={this.slideMove}
-          ></a>
+          ></Link>
         </div>
       </div>
     );

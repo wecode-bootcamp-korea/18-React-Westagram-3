@@ -4,19 +4,22 @@ import "./StoryList.scss";
 class StoryList extends Component {
   constructor(props) {
     super(props);
+    this.storyWrap = React.createRef();
   }
   state = {
     leftValue: 0,
     gap: 0,
-    storyActive: this.props.userData.filter(e => e.storyActive === true),
+    storyActive: this.props.userData.filter(user => user.storyActive === true),
   };
   storyMove = e => {
-    const { className, parentElement } = e.target;
+    const { className } = e.target;
     const gap =
-      this.state.storyActive.length * 81 - parentElement.clientWidth + 15;
+      this.state.storyActive.length * 81 -
+      this.storyWrap.current.clientWidth +
+      15;
     const moveSize =
-      parentElement.clientWidth < 260
-        ? parentElement.clientWidth
+      this.storyWrap.clientWidth < 260
+        ? this.storyWrap.clientWidth
         : gap < 260
         ? gap
         : 260;
@@ -28,7 +31,6 @@ class StoryList extends Component {
           : this.state.leftValue - moveSize,
       },
       () => {
-        console.log("callback");
         this.setState({
           leftValue:
             this.state.leftValue > 0
@@ -40,10 +42,23 @@ class StoryList extends Component {
       }
     );
   };
+  componentDidMount() {
+    const gap =
+      this.state.storyActive.length * 81 -
+      this.storyWrap.current.clientWidth +
+      15;
+    this.setState({
+      gap,
+    });
+  }
   render() {
     return (
       <div className="content-story">
-        <ul className="story-wrap" style={{ left: this.state.leftValue }}>
+        <ul
+          className="story-wrap"
+          style={{ left: this.state.leftValue }}
+          ref={this.storyWrap}
+        >
           {this.state.storyActive.map((storyUser, index) => {
             return (
               <li key={index} className="story-list">
@@ -55,16 +70,20 @@ class StoryList extends Component {
             );
           })}
         </ul>
-        <div className="story-button-wrap">
-          <button
-            className="story-button story-prev active"
-            onClick={this.storyMove}
-          ></button>
-          <button
-            className="story-button story-next active"
-            onClick={this.storyMove}
-          ></button>
-        </div>
+        <button
+          className={
+            "story-button story-prev " +
+            (this.state.leftValue < 0 ? "active" : "")
+          }
+          onClick={this.storyMove}
+        ></button>
+        <button
+          className={
+            "story-button story-next " +
+            (this.state.leftValue > this.state.gap * -1 ? "active" : "")
+          }
+          onClick={this.storyMove}
+        ></button>
       </div>
     );
   }
