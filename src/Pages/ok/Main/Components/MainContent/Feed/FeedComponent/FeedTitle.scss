@@ -1,0 +1,36 @@
+.feed-title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-top: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  background: #fff;
+  .feed-profile {
+    display: flex;
+    border-radius: 50%;
+    > img {
+      width: 32px;
+      height: 32px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .feed-user {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    > div {
+      padding: 1px;
+    }
+    .user-name {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .user-place {
+      font-size: 12px;
+    }
+  }
+}

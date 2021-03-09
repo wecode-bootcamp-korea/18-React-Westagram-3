@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./FeedTitle.scss";
 class FeedTitle extends Component {
   constructor(props) {
     super(props);
@@ -7,13 +7,11 @@ class FeedTitle extends Component {
   render() {
     const { storyActive, username, userplace, imgURL } = this.props.data;
     return (
-      <div className="article-title">
-        <div
-          className={`article-profile ` + (storyActive ? "story-active" : "")}
-        >
+      <div className="feed-title">
+        <div className={`feed-profile ` + (storyActive ? "story-active" : "")}>
           <img src={imgURL} alt="프로필 사진" />
         </div>
-        <div className="title-user">
+        <div className="feed-user">
           <div className="user-name">{username}</div>
           <div className="user-place">{userplace}</div>
         </div>

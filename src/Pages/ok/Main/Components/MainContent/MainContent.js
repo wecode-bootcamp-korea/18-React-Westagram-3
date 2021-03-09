@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import StoryList from "./StoryList";
+import StoryList from "./MainComponent/StoryList";
 import Feed from "./Feed/Feed";
-import MainRight from "./MainRight";
-import FeedData from "../data/FeedData";
+import MainRight from "./MainComponent/MainRight";
+import FeedData from "../../Data/FeedData";
 
 class MainContent extends Component {
   constructor(props) {
@@ -11,6 +11,11 @@ class MainContent extends Component {
   state = {
     FeedData: FeedData,
   };
+  componentDidMount() {
+    fetch("http://localhost:3000/data/FeedData.json", { method: "GET" })
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }
   render() {
     return (
       <div className="main-content">
@@ -20,9 +25,9 @@ class MainContent extends Component {
             <Feed key={feed.id} data={feed}></Feed>
           ))}
         </div>
-        <div className="scroll-trigger">
+        {/* <div className="scroll-trigger">
           <div className="load-spinning"></div>
-        </div>
+        </div> */}
         <MainRight userData={this.props.userData}></MainRight>
       </div>
     );

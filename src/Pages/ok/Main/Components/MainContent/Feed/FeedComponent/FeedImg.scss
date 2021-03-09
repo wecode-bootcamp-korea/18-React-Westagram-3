@@ -1,0 +1,53 @@
+.feed-img {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  .feed-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    transition: all 0.3s;
+    .slide-list {
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .slide-button-wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+    .slide-button {
+      display: block;
+      width: 40px;
+      background: url(https://www.instagram.com/static/bundles/es6/sprite_glyphs_2x_9e0e7ad2c7e4.png/9e0e7ad2c7e4.png)
+        no-repeat;
+      background-size: 510px 477px;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s;
+      &.prev {
+        background-position: -291px -225px;
+      }
+      &.next {
+        background-position: -294px -270px;
+      }
+      &.active {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}

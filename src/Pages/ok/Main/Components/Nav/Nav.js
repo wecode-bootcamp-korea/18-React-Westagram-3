@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark, faCog } from "@fortawesome/free-solid-svg-icons";
 import { faUserCircle } from "@fortawesome/free-regular-svg-icons";
+import logo from "../../../../../images/seungok/images/default_icon/instagram.png";
+import explore from "../../../../../images/seungok/images/default_icon/explore.png";
+import heart from "../../../../../images/seungok/images/default_icon/heart.png";
+import profile from "../../../../../images/seungok/images/default_icon/profile.png";
+import "./Nav.scss";
 
 class Nav extends Component {
   constructor(props) {
@@ -42,11 +48,7 @@ class Nav extends Component {
       <nav className="main-nav">
         <div className="nav-wrap">
           <a className="logo-wrap" href="/main">
-            <img
-              className="logo-img"
-              src="/images/default_icon/instagram.png"
-              alt="로고"
-            />
+            <img className="logo-img" src={logo} alt="로고" />
             <h1 className="logo">Westagram</h1>
           </a>
           <div className="search-wrap">
@@ -87,13 +89,13 @@ class Nav extends Component {
           </div>
           <ul className="sub-wrap">
             <li className="sub-list">
-              <img src="/images/default_icon/explore.png" alt="탐색" />
+              <img src={explore} alt="탐색" />
             </li>
             <li className="sub-list">
-              <img src="/images/default_icon/heart.png" alt="좋아요" />
+              <img src={heart} alt="좋아요" />
             </li>
             <li className="sub-list profile" onClick={this.toggleSubOption}>
-              <img src="images/default_icon/profile.png" alt="프로필" />
+              <img src={profile} alt="프로필" />
             </li>
             <div
               className={
@@ -113,7 +115,9 @@ class Nav extends Component {
                   <FontAwesomeIcon icon={faCog}></FontAwesomeIcon>
                   <span>설정</span>
                 </li>
-                <li className="option-list logout">로그아웃</li>
+                <li className="option-list logout">
+                  <Link to={"/login-ok"}>로그아웃</Link>
+                </li>
               </ul>
               <span className="triangle-content"></span>
             </div>

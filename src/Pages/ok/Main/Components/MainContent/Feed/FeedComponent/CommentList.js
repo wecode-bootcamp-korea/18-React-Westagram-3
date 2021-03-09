@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import { faHeart as fasHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./CommentList.scss";
 
 class CommentList extends Component {
   constructor(props) {
     super(props);
   }
-
   state = {
     heartClick: false,
   };
@@ -16,6 +16,9 @@ class CommentList extends Component {
       heartClick: !this.state.heartClick,
     });
   };
+  componentWillUnmount() {
+    console.log("자식의 자식 componentWillUnmount");
+  }
   render() {
     const { name, comment } = this.props.data;
     return (
@@ -31,7 +34,12 @@ class CommentList extends Component {
           icon={this.state.heartClick ? fasHeart : farHeart}
           onClick={this.toggleHeart}
         ></FontAwesomeIcon>
-        <span className="delete-wrap comment">
+        <span
+          className="delete-wrap comment"
+          onClick={e => {
+            this.props.togglePop(e, this.props.commentId);
+          }}
+        >
           <span className="delete-btn"></span>
         </span>
       </li>
