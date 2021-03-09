@@ -1,7 +1,7 @@
 import React from 'react';
-import './MainLeft.scss';
 import Story from './Story/Story';
 import Feed from './Feed/Feed';
+import './MainLeft.scss';
 
 class MainLeft extends React.Component {
   render() {

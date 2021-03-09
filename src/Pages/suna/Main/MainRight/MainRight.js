@@ -1,6 +1,6 @@
 import React from 'react';
-import './MainRight.scss';
 import Footer from './Footer/Footer';
+import './MainRight.scss';
 import './Footer/Footer.scss';
 
 class MainRight extends React.Component {

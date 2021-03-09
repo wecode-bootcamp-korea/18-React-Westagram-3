@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './CommentList.scss';
 
 class CommentList extends Component {
   constructor(props) {

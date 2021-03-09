@@ -1,6 +1,5 @@
 import React from 'react';
 import Comment from './Comment/Comment';
-import './Comment/commentData';
 import './Feed.scss';
 
 class Feed extends React.Component {
