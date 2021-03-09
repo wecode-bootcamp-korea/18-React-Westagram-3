@@ -7,10 +7,11 @@ class CommentList extends Component {
     this.state ={};
   }
   render() {
+    const { name, comment } = this.props;
     return (
       <div>
-        <span>{this.props.name}</span>
-        <span>{this.props.comment}</span>
+        <span>{name}</span>
+        <span>{comment}</span>
       </div>
     );
   }

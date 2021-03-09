@@ -7,13 +7,14 @@ class Comment extends React.Component {
     this.state ={};
   }
   render() {
-    console.log(this.props);
+    const { name, commentValue } = this.props;
     return (
       <li>
-        <h3 className="user-name">{this.props.name}</h3>
+        
+        <h3 className="user-name">{name}</h3>
         &nbsp;
         <span className="user-comment"> 
-        {this.props.commentValue} </span>
+        {commentValue} </span>
         <i
           aria-label="좋아요"
         className="far fa-heart comment-like comment-btn"

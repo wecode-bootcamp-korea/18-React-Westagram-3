@@ -22,16 +22,18 @@ class LoginSuna extends React.Component {
   };
   
   handleIdValue = (e) => {
+    const { value } = e.target;
     this.setState({
-      id : e.target.value,
-      ready : this.state.pw.length>5 && e.target.value.includes("@") ? true : false
+      id : value,
+      ready : this.state.pw.length>5 && value.includes("@") ? true : false
     });
   };
 
   handlePwValue = (e) => {
+    const { value } = e.target;
     this.setState({
-      pw : e.target.value,
-      ready : e.target.value.length>5 && this.state.id.includes("@") ? true : false
+      pw : value,
+      ready : value.length>5 && this.state.id.includes("@") ? true : false
     });
   }
 

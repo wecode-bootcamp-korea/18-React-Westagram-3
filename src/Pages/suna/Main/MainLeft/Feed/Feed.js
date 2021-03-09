@@ -71,7 +71,6 @@ class Feed extends React.Component {
 
   render() {
     const { commentList, commentValue } = this.state;
-
     return (
         <section className="feeds">
           <article className="feed">
