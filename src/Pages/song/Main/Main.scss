@@ -182,7 +182,9 @@
     color: #0095f6;
     font-weight: 600;
     font-size: 14px;
-    opacity: 0.3;
+  }
+  .comment__btn-post:disabled {
+    color: #b2dffc;
   }
   .comments__row {
     display: flex;

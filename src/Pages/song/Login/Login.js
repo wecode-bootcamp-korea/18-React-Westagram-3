@@ -24,9 +24,6 @@ class Login extends Component{
   }
 
   render(){
-    // console.log(this.state.idCheck);
-    // console.log("idCheck:" + this.state.idCheck, "pwCheck:" + this.state.pwCheck);
-    // console.log(this.state.idValid, this.state.pwValid );
       return(          
           <div className = "Login">
             <div className="main-box">
