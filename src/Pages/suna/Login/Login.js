@@ -6,7 +6,7 @@ class LoginSuna extends React.Component {
   constructor() {
     super();
     this.state = {
-      id: "",
+      email: "",
       pw: "",
       ready: "",
     };
@@ -21,21 +21,13 @@ class LoginSuna extends React.Component {
       }
   };
   
-  handleIdValue = (e) => {
-    const { value } = e.target;
+  handleInputValue = (e) => {
+    const { name, value } = e.target;
     this.setState({
-      id : value,
-      ready : this.state.pw.length>5 && value.includes("@") ? true : false
+      [name] : value,
+      ready : this.state.pw.length>5 && this.state.email.includes("@") ? true : false
     });
   };
-
-  handlePwValue = (e) => {
-    const { value } = e.target;
-    this.setState({
-      pw : value,
-      ready : value.length>5 && this.state.id.includes("@") ? true : false
-    });
-  }
 
   render() {
     return (
@@ -51,22 +43,23 @@ class LoginSuna extends React.Component {
             <div>
               <div className="input-box">
                 <input
+                  name="email"
                   type="text"
                   placeholder="전화번호, 사용자 이름 또는 이메일
                   "
                   className="login data"
                   id="user"
                   autoComplete="off"
-                  onChange={this.handleIdValue}
+                  onChange={this.handleInputValue}
                 />
                 <input
-                  name="password"
+                  name="pw"
                   type="password"
                   placeholder="비밀번호"
                   className="login data"
                   id="password"
                   autoComplete="off"
-                  onChange={this.handlePwValue}
+                  onChange={this.handleInputValue}
                 />
               </div>
               <div className="button-box">
