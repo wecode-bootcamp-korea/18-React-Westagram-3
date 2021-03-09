@@ -1,0 +1,34 @@
+.Reply {
+  * {
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 14px;
+  color: #424242;
+}
+
+.replyBox {
+  height: auto;
+  padding: 10px;
+  ul {
+  list-style: none;
+  padding-left: 0px;
+  li {
+  height: 25px;
+}}
+}
+
+.userId {
+  margin-right: 5px;
+  font-weight: 700;
+}
+
+.replyInput {
+  width: 100%;
+  height: 45px;
+  padding: 10px;
+  border-top: 1px solid #c0c0c0;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+}
