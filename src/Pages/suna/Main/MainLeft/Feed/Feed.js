@@ -1,47 +1,78 @@
 import React from 'react';
+import Comment from './Comment/Comment';
+import './Comment/commentData';
 import './Feed.scss';
 
 class Feed extends React.Component {
   constructor() {
     super();
     this.state = {
-      comment: "",
       commentList: [],
+      commentValue: "",
       click: false,
     };
   }
 
-  addComment = (e) => {
-    e.preventDefault();
-    if(this.state.click) {
-      this.setState({
-        commentList: this.state.commentList.concat([this.state.comment]),
-        click: "",
-        comment: "",
-      })
-    }
-  };
-    
-    
-
-  pressEnter = (e) => {
-    if(e.key === "Enter") {
-      this.setState({
-        commentList: this.state.commentList.concat([this.state.comment]),
-        click: "",
-        comment: "",
-      })
-    }
-  };
+  componentDidMount() {
+    fetch('http://localhost:3000/data/commentData.json', {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          commentList: data,     
+        });
+      });
+  }
 
   getInputValue = (e) => {
     this.setState({
-      comment : e.target.value,
+      commentValue : e.target.value,
       click: true,
     });
   };
+  
+  addComment = (e) => {
+    e.preventDefault();
+    const { commentList, commentValue } = this.state;
+      this.setState({
+        commentList: [
+          ...commentList,
+          {
+            id: commentList.length + 1,
+            userName: 'wecode',
+            content: commentValue,
+            isLiked: false
+          }
+        ],
+        commentValue: "",
+        click: "",
+      });
+  };
+
+  pressEnter = (e) => {
+    if(e.key === "Enter") {
+      e.preventDefault();
+      const { commentList, commentValue } = this.state;
+        this.setState({
+          commentList: [
+            ...commentList,
+            {
+              id: commentList.length + 1,
+              userName: 'wecode',
+              content: commentValue,
+              isLiked: false
+            }
+          ],
+          commentValue: "",
+          click: "",
+        });
+    }
+  };
 
   render() {
+    const { commentList, commentValue } = this.state;
+
     return (
         <section className="feeds">
           <article className="feed">
@@ -96,63 +127,33 @@ class Feed extends React.Component {
               </div>
               <div className="feed-comments">
                 <ul className="comments-list">
-                  <li>
-                    <h3 className="user-name">hellowecode</h3>
-                    &nbsp;
-                    <span className="user-comment">댓글1치키차카초코초코초</span>
-                    <i
-                      aria-label="좋아요"
-                      className="far fa-heart comment-like comment-btn"
-                    ></i>
-                  </li>
-                  <li>
-                    <h3 className="user-name">byevscode</h3>
-                    &nbsp;
-                    <span className="user-comment">댓글2치키차카초코초코초</span>
-                    <i
-                      aria-label="좋아요"
-                      className="far fa-heart comment-like comment-btn"
-                    ></i>
-                  </li>
-                  <li>
-                    <h3 className="user-name">goodtoseeyou</h3>
-                    &nbsp;
-                    <span className="user-comment">댓글3치키차카초코초코초</span>
-                    <i
-                      aria-label="좋아요"
-                      className="far fa-heart comment-like comment-btn"
-                    ></i>
-                  </li>
-                    {this.state.commentList.map((comm) => {
+                    {commentList.map(comment => {
                       return (
-                      <li>
-                      <h3 className="user-name">wecoder18th</h3>
-                      &nbsp;
-                      <span className="user-comment"> 
-                      {comm} </span>
-                      <i
-                        aria-label="좋아요"
-                        className="far fa-heart comment-like comment-btn"
-                      ></i>
-                    </li>)
+                        <Comment 
+                        key={comment.id}
+                        clickEvent={this.changeColor}
+                        name={comment.userName}
+                        commentValue={comment.content} />
+                      );
                     })}
                 </ul>
               </div>
             </div>
 
-            <form className="input-comment">
+            <form className="input-comment" onSubmit={this.addComment}>
               <i className="far fa-smile"></i>
               <textarea
                 aria-label="댓글달기..."
                 placeholder="댓글 달기..."
                 id="comment"
                 className="comment"
-                autoComplete="off"                 onChange={this.getInputValue}
+                autoComplete="off"
+                onChange={this.getInputValue}
                 onKeyPress={this.pressEnter}
-                value={this.state.comment}
+                value={commentValue}
               ></textarea>
               <button type="submit"
-              className={this.state.click ? "comment-submit blue" : "comment-submit gray disabled"}
+              className="comment-submit blue"
               onClick={this.addComment}>게시</button>
             </form>
           </article>
