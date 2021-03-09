@@ -1,12 +1,12 @@
 .feeds {
-  border: 1px solid #dbdbdb;
-  border-radius: 3px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0;
   background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
   .feed {
     .feed-header {
       display: flex;
@@ -31,8 +31,8 @@
           flex-direction: column;
           justify-content: center;
           flex-wrap: wrap;
-          line-height: 18px;
           width: auto;
+          line-height: 18px;
           margin-left: 12px;
         }
       }
@@ -44,9 +44,9 @@
         width: 22px;
         height: 22px;
         margin: 8px;
+        background-color: transparent;
         border: 0;
         font-size: 22px;
-        background-color: transparent;
         cursor: pointer;
       }
     }
@@ -76,9 +76,9 @@
             width: 22px;
             height: 22px;
             margin: 8px;
+            background-color: transparent;
             border: 0;
             font-size: 22px;
-            background-color: transparent;
             cursor: pointer;
             .far,
             .fas {
@@ -94,9 +94,9 @@
           width: 22px;
           height: 22px;
           margin: 8px;
+          background-color: transparent;
           border: 0;
           font-size: 22px;
-          background-color: transparent;
           cursor: pointer;
           .far {
             font-size: 22px;
@@ -120,28 +120,10 @@
         display: flex;
         width: 100%;
         .comments-list {
-          padding-left: 0;
           margin-left: 0;
+          padding-left: 0;
           list-style-type: none;
           list-style-position: inside;
-          li {
-            margin-bottom: 4px;
-            h3,
-            span {
-              display: inline-block;
-            }
-            .comment-btn {
-              display: inline-block;
-              position: absolute;
-              right: 0;
-              @extend .comment-like;
-            }
-            .comment-like {
-              width: 12px;
-              height: 12px;
-              font-size: 12px;
-            }
-          }
         }
       }
     }
@@ -160,13 +142,13 @@
       }
       .comment {
         display: flex;
-        border: none;
-        outline: none;
-        resize: none;
         width: 100%;
         height: 18px;
         padding: 0;
         margin: 0;
+        border: none;
+        outline: none;
+        resize: none;
         font-size: 14px;
         text-align: start;
         overflow: hidden;
@@ -176,8 +158,8 @@
         border: none;
         width: 34px;
         padding: 0;
-        font-size: 14px;
         background-color: transparent;
+        font-size: 14px;
       }
     }
   }

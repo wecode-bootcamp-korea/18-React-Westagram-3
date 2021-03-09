@@ -1,8 +1,8 @@
 h3 {
-  font-size: 14px;
-  font-weight: 600;
   color: #1f2d3d;
   line-height: 1.25;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 p,
@@ -23,10 +23,10 @@ span {
   display: inline-block;
   width: 34px;
   padding: 0;
-  text-align: right;
-  cursor: pointer;
   color: #0095f6;
   font-weight: 600;
+  text-align: right;
+  cursor: pointer;
 }
 
 .bold {
@@ -41,8 +41,8 @@ span {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0;
   margin: 0;
+  padding: 0;
   background-color: #fafafa;
   main {
     position: relative;

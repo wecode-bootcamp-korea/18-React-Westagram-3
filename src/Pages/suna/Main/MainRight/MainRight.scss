@@ -6,8 +6,8 @@
   align-items: stretch;
   width: 293px;
   height: 100vh;
-  padding: 0;
   margin-bottom: 30px;
+  padding: 0;
   .profile-box {
     position: relative;
     display: flex;
@@ -31,8 +31,8 @@
         flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
-        line-height: 18px;
         width: auto;
+        line-height: 18px;
         margin-left: 12px;
       }
     }
@@ -46,8 +46,8 @@
       align-items: center;
       height: 19px;
       width: 100%;
-      padding: 4px 0 4px;
       margin-top: 12px;
+      padding: 4px 0 4px;
       p {
         color: #262626;
       }
@@ -82,8 +82,8 @@
             flex-direction: column;
             justify-content: center;
             flex-wrap: wrap;
-            line-height: 18px;
             width: auto;
+            line-height: 18px;
             margin-left: 12px;
           }
         }
