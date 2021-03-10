@@ -4,10 +4,12 @@
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
   border-radius: 3px;
   .feed {
+    position: relative;
+    margin-bottom: 60px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
     .feed-header {
       display: flex;
       position: relative;

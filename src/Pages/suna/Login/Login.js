@@ -6,14 +6,29 @@ class LoginSuna extends React.Component {
   constructor() {
     super();
     this.state = {
-      email: "",
+      id: "",
       pw: "",
       ready: "",
+      name: "hello",
     };
   }
 
-  goToMain = () => {
+  componentDidMount() {
+  }
+
+  goToMain = (e) => {
+    e.preventDefault();
     if(this.state.ready === true){
+    //   fetch("http://10.58.5.212:8000/user/login", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     email: this.state.id,
+    //     password: this.state.pw,
+    //     username: this.state.name,
+    //   }),
+    // })
+      // .then((response) => response.json())
+      // .then((result) => console.log("결과: ", result));
       this.props.history.push('/main-suna');
       } else {
         alert("아이디와 비밀번호를 확인해주세요")
@@ -25,11 +40,12 @@ class LoginSuna extends React.Component {
     const { name, value } = e.target;
     this.setState({
       [name] : value,
-      ready : this.state.pw.length>5 && this.state.email.includes("@") ? true : false
+      ready : this.state.pw.length>5 && this.state.id.includes("@") ? true : false
     });
   };
 
   render() {
+    console.log(this.state.id, this.state.pw)
     return (
       <div className="background">
         <section className="login-page">
@@ -43,7 +59,7 @@ class LoginSuna extends React.Component {
             <div>
               <div className="input-box">
                 <input
-                  name="email"
+                  name="id"
                   type="text"
                   placeholder="전화번호, 사용자 이름 또는 이메일
                   "
@@ -66,7 +82,7 @@ class LoginSuna extends React.Component {
                 <button type="submit" 
                 className={this.state.ready ? 
                   "login button active" : "login button"}
-                onClick={this.goToMain}
+                onClick={(e) => this.goToMain(e)}
                 >
                   <Link to="/main-suna">로그인</Link>
                 </button>

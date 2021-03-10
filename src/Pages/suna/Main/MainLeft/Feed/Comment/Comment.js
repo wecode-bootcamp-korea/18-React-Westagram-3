@@ -2,10 +2,6 @@ import React from 'react';
 import './Comment.scss';
 
 class Comment extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state ={};
-  }
   render() {
     const { name, commentValue } = this.props;
     return (

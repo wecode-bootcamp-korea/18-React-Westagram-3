@@ -1,20 +1,20 @@
 [
   {
     "id": 1,
-    "userName": "wecode",
-    "content": "Welcome to world best coding bootcamp!",
+    "userName": "Python",
+    "content": "See you later",
     "isLiked": true
   },
   {
     "id": 2,
-    "userName": "joonsikyang",
-    "content": "Hi there.",
+    "userName": "JavaScript",
+    "content": "Long time no see",
     "isLiked": false
   },
   {
     "id": 3,
-    "userName": "jayPark",
-    "content": "Hey.",
+    "userName": "React",
+    "content": "Nice to meet you",
     "isLiked": false
   }
 ]
