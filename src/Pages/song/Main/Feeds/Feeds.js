@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import imgProfile from "../../../../../src/images/songhee/myprofile.jpg";
-import imgFeed from "../../../../../src/images/songhee/pic.jpg";
 import Comment from "./Comment/Comment";
 import "./Feeds.scss";
+
+import imgProfile from "../../../../../src/images/songhee/myprofile.jpg";
+import imgFeed from "../../../../../src/images/songhee/pic.jpg";
 
 class Feeds extends Component {
   constructor() {
@@ -30,18 +31,20 @@ class Feeds extends Component {
 
   handleInputComment = (e) => {
     const inputValue = e.target.value;
-    if (inputValue) this.setState({ postValid: true });
-    else this.setState({ postValid: false });
+    inputValue
+      ? this.setState({ postValid: true })
+      : this.setState({ postValid: false });
     this.setState({
       inputText: inputValue,
     });
   };
   handlePost = () => {
+    const { inputText, commentList } = this.state;
     this.setState({
-      postText: this.state.inputText,
-      commentList: this.state.commentList.concat({
+      postText: inputText,
+      commentList: commentList.concat({
         userName: "songhee",
-        content: this.state.inputText,
+        content: inputText,
       }),
       inputText: "",
       postValid: false,

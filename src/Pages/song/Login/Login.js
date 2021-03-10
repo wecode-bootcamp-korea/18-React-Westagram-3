@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./Login.scss";
 
 class Login extends Component {
@@ -14,16 +13,19 @@ class Login extends Component {
   }
 
   handleValidId = (e) => {
-    const isValidLen =
-      e.target.value.length > 4 && e.target.value.indexOf("@") > -1;
-    if (isValidLen) this.setState({ idValid: true, id: e.target.value });
-    else this.setState({ idValid: false });
+    const { value } = e.target.value;
+    const isValidLen = value.length > 4 && value.indexOf("@") > -1;
+    isValidLen
+      ? this.setState({ idValid: true, id: value })
+      : this.setState({ idValid: false });
   };
 
   handleValidPw = (e) => {
-    const isValidLen = e.target.value.length > 4;
-    if (isValidLen) this.setState({ pwValid: true, pw: e.target.value });
-    else this.setState({ pwValid: false });
+    const { value } = e.target.value;
+    const isValidLen = value.length > 4;
+    isValidLen
+      ? this.setState({ pwValid: true, pw: value })
+      : this.setState({ pwValid: false });
   };
 
   handleJoinSubmit = () => {
@@ -44,16 +46,16 @@ class Login extends Component {
   };
 
   handleLoginSubmit = () => {
+    const { id, pw } = this.state;
     fetch("http://10.58.1.171:8000/user/login", {
       method: "POST",
       body: JSON.stringify({
-        email: this.state.id,
-        password: this.state.pw,
+        email: id,
+        password: pw,
       }),
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log("결과 :", result);
         return result.status === 200
           ? this.props.history.push("/main-song")
           : alert(result.message);
@@ -61,8 +63,9 @@ class Login extends Component {
   };
 
   render() {
+    const { idValid, pwValid } = this.state;
     return (
-      <div className="Login">
+      <div className="login">
         <div className="main-box">
           <header className="logo big-logo">westagram</header>
           <div className="inner-box">
@@ -81,14 +84,14 @@ class Login extends Component {
               placeholder="비밀번호"
             />
             <button
-              disabled={!(this.state.idValid && this.state.pwValid)}
+              disabled={!(idValid && pwValid)}
               className="btnLogin"
               onClick={this.handleJoinSubmit}
             >
               회원가입
             </button>
             <button
-              disabled={!(this.state.idValid && this.state.pwValid)}
+              disabled={!(idValid && pwValid)}
               className="btnLogin"
               onClick={this.handleLoginSubmit}
             >

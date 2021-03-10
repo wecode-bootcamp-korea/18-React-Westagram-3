@@ -4,18 +4,21 @@
   justify-content: space-between;
   margin-bottom: 5px;
 
-  .comment__userId {
-    font-weight: 600;
-    padding-right: 10px;
+  &:hover .fa-ellipsis-h {
+    display: block;
+
+    .comment__userId {
+      font-weight: 600;
+      padding-right: 10px;
+    }
+
+    .comment__contents {
+      width: 100%;
+      word-break: break-all;
+    }
+
+    .fa-ellipsis-h {
+      display: none;
+    }
   }
-  .comment__contents {
-    width: 100%;
-    word-break: break-all;
-  }
-  .fa-ellipsis-h {
-    display: none;
-  }
-}
-.comments__row:hover .fa-ellipsis-h {
-  display: block;
 }

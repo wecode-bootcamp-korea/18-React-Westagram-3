@@ -75,10 +75,10 @@
     input {
       width: 85%;
       border: 0;
-    }
 
-    input::placeholder {
-      opacity: 0.6;
+      &::placeholder {
+        opacity: 0.6;
+      }
     }
   }
 
@@ -86,9 +86,9 @@
     color: #0095f6;
     font-weight: 600;
     font-size: 14px;
-  }
 
-  .comment__btn-post:disabled {
-    color: #b2dffc;
+    &:disabled {
+      color: #b2dffc;
+    }
   }
 }

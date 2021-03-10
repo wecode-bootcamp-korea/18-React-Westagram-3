@@ -8,7 +8,11 @@ class Aside extends Component {
       <div className="Aside">
         <div className="user-component">
           <div className="user-component__column">
-            <img className="user-component__pimg" src={imgProfile} alt="" />
+            <img
+              className="user-component__pimg"
+              src={imgProfile}
+              alt="profile"
+            />
             <div className="user-component__text">
               <a href="#" className="user-component__id">
                 soon.cake
