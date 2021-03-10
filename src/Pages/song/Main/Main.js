@@ -26,13 +26,23 @@ class Mmain extends Component {
       });
   }
   render() {
-    console.log("feed data : ", this.state.feedList);
+    const { feedList } = this.state;
+    console.log("feed data : ", feedList);
 
     return (
       <main>
         <div className="main-center">
           <Stories />
-          <Feeds />
+          {feedList.map((feed) => {
+            return (
+              <Feeds
+                username={feed.userName}
+                profileimg={feed.profileImg}
+                feedimg={feed.feedImg}
+                key={feed.id}
+              />
+            );
+          })}
         </div>
         <Aside />
       </main>

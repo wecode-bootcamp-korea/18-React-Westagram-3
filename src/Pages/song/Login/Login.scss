@@ -32,16 +32,16 @@
         border: var(--main-border);
         border-radius: 3px;
         background-color: #fafafa;
+        &::placeholder {
+          color: #999999;
+          font-size: 12px;
+        }
+        &:focus {
+          border: var(--main-border);
+        }
       }
       a {
         width: 100%;
-      }
-      input::placeholder {
-        color: #999999;
-        font-size: 12px;
-      }
-      input:focus {
-        border: var(--main-border);
       }
       .btnLogin {
         width: 100%;

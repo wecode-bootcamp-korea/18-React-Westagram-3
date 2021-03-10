@@ -1,4 +1,4 @@
-.comments__row {
+.comment {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -6,19 +6,18 @@
 
   &:hover .fa-ellipsis-h {
     display: block;
+  }
+  .comment__userId {
+    font-weight: 600;
+    padding-right: 10px;
+  }
 
-    .comment__userId {
-      font-weight: 600;
-      padding-right: 10px;
-    }
+  .comment__contents {
+    width: 100%;
+    word-break: break-all;
+  }
 
-    .comment__contents {
-      width: 100%;
-      word-break: break-all;
-    }
-
-    .fa-ellipsis-h {
-      display: none;
-    }
+  .fa-ellipsis-h {
+    display: none;
   }
 }

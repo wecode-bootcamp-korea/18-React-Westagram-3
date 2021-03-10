@@ -55,17 +55,19 @@ class Feeds extends Component {
     if (enterKey && this.state.postValid) this.handlePost();
   };
   render() {
+    const { commentList, inputText, postValid } = this.state;
+    const { profileimg, feedimg, username } = this.props;
     return (
       <div className="feeds">
         <article className="feed">
           <div className="feed__head">
             <div className="feed__head__left">
-              <img className="feed__head__img" src={imgProfile} alt="" />
-              <span className="feed__head__id">songhee</span>
+              <img className="feed__head__img" src={profileimg} alt="" />
+              <span className="feed__head__id">{username}</span>
             </div>
             <i className="fas fa-ellipsis-h"></i>
           </div>
-          <img className="feed__img" src={imgFeed} alt="" />
+          <img className="feed__img" src={feedimg} alt="" />
           <div className="feed__icons inPad">
             <span className="feed__icons__left">
               <i className="far fa-heart"></i>
@@ -81,11 +83,13 @@ class Feeds extends Component {
           </div>
           <div className="feed__commentList inPad">
             <div className="comments">
-              {this.state.commentList.map((comment) => {
+              {commentList.map((comment, index) => {
                 return (
                   <Comment
                     user={comment.userName ? comment.userName : "songhee"}
                     comment={comment.content}
+                    key={index}
+                    isLiked={comment.isLiked}
                   />
                 );
               })}
@@ -99,18 +103,18 @@ class Feeds extends Component {
               onKeyPress={this.handleEnter}
               type="text"
               placeholder="댓글 달기..."
-              value={this.state.inputText}
+              value={inputText}
             />
             <button
               className="comment__btn-post btn-none"
               onClick={
-                this.state.inputText
+                inputText
                   ? this.handlePost
                   : (e) => {
                       e.preventDefault();
                     }
               }
-              disabled={!this.state.postValid}
+              disabled={!postValid}
             >
               게시
             </button>
