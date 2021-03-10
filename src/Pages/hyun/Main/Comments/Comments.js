@@ -34,13 +34,13 @@ class Comments extends Component {
   render() {
     console.log('렌더 안에서 >>', this.state)
     return (
-      <div className="Comments">
-        <div className="CommentsBox">
+      <div className="comments">
+        <div className="commentsBox">
           <ul>
             <Comment A={this.state.commentList} B={this.state.userId} />
           </ul>
         </div>
-        <input onChange={this.handleCommentnput} onKeyPress={this.handleComment} className="CommentInput" type="text" placeholder="댓글 달기..." />
+        <input onChange={this.handleCommentnput} onKeyPress={this.handleComment} className="commentInput" type="text" placeholder="댓글 달기..." />
       </div>
     )
   }
