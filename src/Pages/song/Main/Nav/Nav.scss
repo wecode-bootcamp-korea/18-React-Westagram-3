@@ -1,0 +1,52 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  padding: 12px 0px;
+  border-bottom: var(--main-border);
+  background-color: #ffffff;
+
+  .small-logo {
+    font-size: 26px;
+  }
+
+  .nav__search {
+    position: relative;
+    width: 215px;
+    .fa-search {
+      position: absolute;
+      bottom: 7px;
+      left: 35%;
+      opacity: 0.3;
+    }
+    .search__bar {
+      width: 100%;
+      height: 30px;
+      border: var(--main-border);
+      border-radius: 3px;
+      opacity: 0.5;
+    }
+    .search__bar::placeholder {
+      text-align: center;
+    }
+  }
+
+  .nav__icons {
+    font-size: 25px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    i {
+      margin-right: 25px;
+    }
+    .imgMyprofile {
+      width: 25px;
+      border: var(--main-border);
+      border-radius: 50%;
+    }
+  }
+}

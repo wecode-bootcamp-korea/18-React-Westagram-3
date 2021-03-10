@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import imgProfile from "../../../../../src/images/songhee/myprofile.jpg";
 import imgFeed from "../../../../../src/images/songhee/pic.jpg";
 import Comment from "./Comment/Comment";
+import "./Feeds.scss";
 
 class Feeds extends Component {
   constructor() {
@@ -13,6 +14,20 @@ class Feeds extends Component {
       commentList: [],
     };
   }
+  componentDidMount() {
+    fetch("http://localhost:3000/data/commentData.json", {
+      method: "GET",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        this.setState({
+          commentList: data,
+        });
+      });
+  }
+
   handleInputComment = (e) => {
     const inputValue = e.target.value;
     if (inputValue) this.setState({ postValid: true });
@@ -25,13 +40,18 @@ class Feeds extends Component {
     this.setState({
       postText: this.state.inputText,
       commentList: this.state.commentList.concat({
-        comment: this.state.inputText,
+        userName: "songhee",
+        content: this.state.inputText,
       }),
       inputText: "",
+      postValid: false,
     });
   };
+  handleEnter = (e) => {
+    const enterKey = e.key === "Enter";
+    if (enterKey && this.state.postValid) this.handlePost();
+  };
   render() {
-    console.log("this.state.commentList: ", this.state.commentList);
     return (
       <div className="feeds">
         <article className="feed">
@@ -59,7 +79,12 @@ class Feeds extends Component {
           <div className="feed__commentList inPad">
             <div className="comments">
               {this.state.commentList.map((comment) => {
-                return <Comment data={comment.comment} />;
+                return (
+                  <Comment
+                    user={comment.userName ? comment.userName : "songhee"}
+                    comment={comment.content}
+                  />
+                );
               })}
             </div>
           </div>
@@ -68,6 +93,7 @@ class Feeds extends Component {
             <i className="far fa-grin fa-lg"></i>
             <input
               onChange={this.handleInputComment}
+              onKeyPress={this.handleEnter}
               type="text"
               placeholder="댓글 달기..."
               value={this.state.inputText}

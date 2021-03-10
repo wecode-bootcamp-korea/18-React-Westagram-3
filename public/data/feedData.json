@@ -1,0 +1,21 @@
+[ 
+    {
+    "id": 1,
+    "userName": "wecode",
+    "profileImg" : "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+    "feedImg": "https://media.vlpt.us/images/realsong/post/94e01321-f7e8-4e89-822a-08a8626b47b5/KakaoTalk_20210217_203104033.jpg",
+    "isLiked": true
+  },{
+    "id": 2,
+    "userName": "songhee",
+    "profileImg" : "https://i.pinimg.com/564x/da/51/c2/da51c26fe3398b0f8314fee17a98e0e7.jpg",
+    "feedImg": "https://media.vlpt.us/images/realsong/post/a60ab26e-13e5-4ad6-8fc5-81f7b6f2e97d/image.png",
+    "isLiked": true
+  },{
+    "id": 3,
+    "userName": "soon.cake",
+    "profileImg" : "https://imgc.1300k.com/aaaaaib/goods/215024/71/215024713100.jpg?3",
+    "feedImg": "https://lh3.googleusercontent.com/-I05NxkrzM0E/WtlUVaKR0_I/AAAAAAAAAI8/_LB3iODpwks2Pe0Z7WRWnvXMspec57zOQCEwYBhgLKtMDAL1OcqxNW04RjBiYpq1bO-PcwKmsCS8gG1TdXu2a7AUIIYw-eIsDNSPf4hfdFWleF3p_AL2i2oyozCWqlj1hHp_3H26LfREmDs8HnBOKpryG0oj6mzalYfMo1fJIMduF2UC_46Yc6oY_5P9OA-k2aaU2x8OK67iIRjHW9A4RoA8AIP0KqBNYYsy0hsoovkz0Gf0-_2TNwREwj_3sF3FVCPlmQ_CZrYwS45z8eDUy85UbHSDTIO7znZ5A8Fx0owMMH5hXrFK3RmiLxaPrVwiX8CKaPQ41D0NCxN6X86iapfdV4YqIa1wTJR7D5rlmRx5yDtRisJlLbvfQBl2aewwzuplpLVWOkXFStjDaMUaCwUnnkjRwyY7UPUqnuFnFUO8r3c_4POnpFRtnB6cLYANyJD-WBjz-cfKnKu3vkXCyAiWvA2m-5pc0RCKzQ97z8D35LIEEYkSHUqD_fqDm4MNS_kV7Qvz3rz8I1AXeSEZifWSpebFdTy47fItGRUfc65ch3tGx4gGo6V_pI9rKrN5XuU5E449PhuX9Ls91NF1Bzq7j4dgAHZwSi6GWsRLTXCed4rURSpXZ5Q1zobrTLN_vH3FbnId4u-_GU2EyIV8WQkF7Qt4w9-qfggY/w140-h140-p/IMG_1749.JPG",
+    "isLiked": true
+  }
+]
