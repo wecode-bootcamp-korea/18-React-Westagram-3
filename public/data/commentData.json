@@ -3,18 +3,18 @@
     "id": 1,
     "userName": "Python",
     "content": "See you later",
-    "isLiked": true
+    "isLiked": false
   },
   {
     "id": 2,
     "userName": "JavaScript",
     "content": "Long time no see",
-    "isLiked": false
+    "isLiked": true
   },
   {
     "id": 3,
     "userName": "React",
     "content": "Nice to meet you",
-    "isLiked": false
+    "isLiked": true
   }
 ]

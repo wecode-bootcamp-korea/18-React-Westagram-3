@@ -24,16 +24,24 @@ class Story extends React.Component {
   const { storyList } = this.state;
     return (
         <section id="story-nav">
-          <div class="story-contents">
-          {storyList.map(story => {
-            return (
-              <StoryList 
-              key={story.id}
-              name={story.userName}
-              imgSrc={story.profileSrc}
-              isLive={story.isLive} />
-              );
-          })}
+          <div className="slideWrap">
+            <div className="slideList">
+              <div className="story-contents">
+              {storyList.map(story => {
+                return (
+                  <StoryList 
+                  key={story.id}
+                  name={story.userName}
+                  imgSrc={story.profileSrc}
+                  isLive={story.isLive} />
+                  );
+              })}
+              </div>
+              <div className="story-btn-box">
+                <button type="button" className="slideBtnPrev">Prev</button>
+                <button type="button" className="slideBtnNext">Next</button>
+              </div>
+            </div>
           </div>
         </section>
     );

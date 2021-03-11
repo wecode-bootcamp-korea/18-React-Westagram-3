@@ -128,7 +128,8 @@ class Feed extends React.Component {
                               key={comment.id}
                               clickEvent={this.changeColor}
                               name={comment.userName}
-                              commentValue={comment.content} />
+                              commentValue={comment.content}
+                              isLiked={comment.isLiked} />
                             );
                           })}
                       </ul>
@@ -147,8 +148,9 @@ class Feed extends React.Component {
                       onKeyPress={this.pressEnter}
                       value={commentValue}
                     />
-                    <button type="submit"
-                    className="comment-submit blue"
+                    <button type="submit" 
+                    className={ commentValue ?
+                    "comment-submit blue" : "comment-submit disabled" }
                     onClick={this.addComment}>게시</button>
                   </form>
                 </section>
