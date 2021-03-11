@@ -10,21 +10,21 @@ class Nav extends React.Component {
           <input type="search" placeholder="검색" className="nav-search" />
           <div className="nav-btns">
             <div className="nav-btn">
-              <i className="fas fa-home"></i>
+              <i className="fas fa-home" />
             </div>
             <div className="nav-btn">
-              <i className="far fa-paper-plane"></i>
+              <i className="far fa-paper-plane" />
             </div>
             <div className="nav-btn">
-              <i className="far fa-compass"></i>
+              <i className="far fa-compass" />
             </div>
             <div className="nav-btn">
-              <i className="far fa-heart"></i>
+              <i className="far fa-heart" />
             </div>
             <div className="nav-btn">
               <img
-                src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
                 alt="profile menu"
+                src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
                 className="menu-img"
               />
             </div>

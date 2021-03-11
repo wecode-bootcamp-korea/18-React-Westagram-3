@@ -1,17 +1,35 @@
 import React from 'react';
 import Footer from './Footer/Footer';
+import RecommendList from './RecommendList/RecommendList';
 import './MainRight.scss';
-import './Footer/Footer.scss';
 
 class MainRight extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      recommendList: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch('/data/recommendData.json', )
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          recommendList: data,     
+        });
+      });
+  }
+
   render() {
+    const { recommendList } = this.state;
     return (
         <aside className="main-right">
           <div className="profile-box">
             <div className="card">
               <img
-                src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
                 alt="profile"
+                src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
                 className="profile-img"
               />
               <div className="card-content">
@@ -26,78 +44,17 @@ class MainRight extends React.Component {
               <h3>회원님을 위한 추천</h3>
               <p className="bold">모두 보기</p>
             </div>
-            <div className="recommend-list">
-              <div className="recommend-users">
-                <div className="card">
-                  <img
-                    src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
-                    alt="profile image1"
-                    className="card-img"
-                  />              
-                  <div className="card-content">
-                    <h3>1username1</h3>
-                    <p className="gray">username123님 외 100명이 팔로우합니다</p>
-                  </div>
-                </div>
-                <p className="blue">팔로우</p>
-              </div>
-              <div className="recommend-users">
-                <div className="card">
-                  <img
-                    src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
-                    alt="profile image1"
-                    className="card-img"
-                  />
-                  <div className="card-content">
-                    <h3>1username1</h3>
-                    <p className="gray">username1님 외 10명이 팔로우합니다</p>
-                  </div>
-                </div>
-                <p className="blue">팔로우</p>
-              </div>
-              <div className="recommend-users">
-                <div className="card">
-                  <img
-                    src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
-                    alt="profile image1"
-                    className="card-img"
-                  />
-                  <div className="card-content">
-                    <h3>2username2</h3>
-                    <p className="gray">username2님 외 10명이 팔로우합니다</p>
-                  </div>
-                </div>
-                <p className="blue">팔로우</p>
-              </div>
-              <div className="recommend-users">
-                <div className="card">
-                  <img
-                    src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
-                    alt="profile image1"
-                    className="card-img"
-                  />
-                  <div className="card-content">
-                    <h3>3username3</h3>
-                    <p className="gray">username4님 외 10명이 팔로우합니다</p>
-                  </div>
-                </div>
-                <p className="bold">팔로잉</p>
-              </div>
-              <div className="recommend-users">
-                <div className="card">
-                  <img
-                  src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
-                  alt="profile" className="card-img" />
-                  <div className="card-content">
-                    <h3>5username5</h3>
-                    <p className="gray">username5님 외 34명이 팔로우합니다</p>
-                  </div>
-                </div>
-                <p className="blue">팔로우</p>
-              </div>
-            </div>
+            {recommendList.map(user => {
+              return (
+                <RecommendList 
+                key={user.id}
+                name={user.userName}
+                profileImg={user.profileSrc}
+                statusInfo={user.Info}
+                status={user.isFollow} />
+             );
+            })}
           </div>
-          
           <Footer />
         </aside>
     );

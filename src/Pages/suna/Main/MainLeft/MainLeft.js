@@ -13,9 +13,7 @@ class MainLeft extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/feedData.json', {
-      method: 'GET'
-    })
+    fetch('http://localhost:3000/data/feedData.json',)
       .then(res => res.json())
       .then(data => {
         this.setState({

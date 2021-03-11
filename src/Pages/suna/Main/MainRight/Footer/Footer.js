@@ -16,7 +16,7 @@ class Footer extends React.Component {
               )
             })}
           </div>
-          <span>© 2021 WESTAGRAM <br />FROM WECODE 18th @sunaaank</span>
+          <span>© 2021 WESTAGRAM FROM @sunaaank</span>
         </footer>
       </div>
     );

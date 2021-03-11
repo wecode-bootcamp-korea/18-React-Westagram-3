@@ -8,7 +8,7 @@ class LoginSuna extends React.Component {
     this.state = {
       id: "",
       pw: "",
-      ready: "",
+      isValid: "",
       name: "hello",
     };
   }
@@ -18,34 +18,34 @@ class LoginSuna extends React.Component {
 
   goToMain = (e) => {
     e.preventDefault();
-    if(this.state.ready === true){
-    //   fetch("http://10.58.5.212:8000/user/login", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     email: this.state.id,
-    //     password: this.state.pw,
-    //     username: this.state.name,
-    //   }),
-    // })
-      // .then((response) => response.json())
-      // .then((result) => console.log("결과: ", result));
+    if(this.state.isValid){
+      fetch("http://10.58.5.212:8000/user/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.id,
+        password: this.state.pw,
+        username: this.state.name,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log("결과: ", result));
       this.props.history.push('/main-suna');
       } else {
         alert("아이디와 비밀번호를 확인해주세요")
-        this.props.history.push('/login-suna');
       }
   };
   
   handleInputValue = (e) => {
     const { name, value } = e.target;
+    const { pw, id } = this.state;
     this.setState({
       [name] : value,
-      ready : this.state.pw.length>5 && this.state.id.includes("@") ? true : false
+      isValid : pw.length>5 && id.includes("@") ? true : false
     });
   };
 
   render() {
-    console.log(this.state.id, this.state.pw)
+    const { isValid } = this.state;
     return (
       <div className="background">
         <section className="login-page">
@@ -80,7 +80,7 @@ class LoginSuna extends React.Component {
               </div>
               <div className="button-box">
                 <button type="submit" 
-                className={this.state.ready ? 
+                className={ isValid ? 
                   "login button active" : "login button"}
                 onClick={(e) => this.goToMain(e)}
                 >
@@ -90,7 +90,7 @@ class LoginSuna extends React.Component {
             </div>
           </form>
           <div className="find-password" onClick={this.goToMain}>
-            <Link to="/main-suna">비밀번호를 잊으셨나요?</Link>
+            <Link to="/login-suna">비밀번호를 잊으셨나요?</Link>
           </div>
         </section>
       </div>

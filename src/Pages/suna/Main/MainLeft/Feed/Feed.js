@@ -14,9 +14,7 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/commentData.json', {
-      method: 'GET'
-    })
+    fetch('/data/commentData.json',)
       .then(res => res.json())
       .then(data => {
         this.setState({
@@ -74,13 +72,13 @@ class Feed extends React.Component {
     const { commentList, commentValue } = this.state;
     const { name, profileImg, userLoca, feedImg } = this.props;
     return (
-              <section className="feeds">
-                <article className="feed">
+              <article className="feeds">
+                <section className="feed">
                   <div className="feed-header">
                     <div className="card">
                         <img
-                        src={profileImg}
                         alt="profile"
+                        src={profileImg}
                         className="card-img" />
                       <div className="card-content">
                         <h3 className="user-name">{name}</h3>
@@ -91,8 +89,8 @@ class Feed extends React.Component {
                   </div>
                   <div className="feed-img">
                     <img
-                    src={feedImg}
                     alt="user"
+                    src={feedImg}
                     className="user-img"
                     />
                   </div>
@@ -153,8 +151,8 @@ class Feed extends React.Component {
                     className="comment-submit blue"
                     onClick={this.addComment}>게시</button>
                   </form>
-                </article>
-              </section>
+                </section>
+              </article>
             );
   }
  }
