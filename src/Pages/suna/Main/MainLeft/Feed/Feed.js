@@ -142,7 +142,7 @@ class Feed extends React.Component {
                     <textarea
                       aria-label="댓글달기..."
                       placeholder="댓글 달기..."
-                      id={commentList.length + 1}
+                      key={commentList.length + 1}
                       className="comment"
                       autoComplete="off"
                       onChange={this.getInputValue}
