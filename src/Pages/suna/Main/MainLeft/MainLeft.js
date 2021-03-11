@@ -12,11 +12,33 @@ class MainLeft extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetch('http://localhost:3000/data/feedData.json', {
+      method: 'GET'
+    })
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          feedList: data,     
+        });
+      });
+  }
+
   render() {
+    const { feedList } = this.state;
     return (
         <div className="main-left">
           <Story />
-          <Feed />
+          {feedList.map(feed => {
+              return (
+          <Feed 
+          key={feed.id}
+          name={feed.userName}
+          profileImg={feed.profileSrc}
+          userLoca={feed.userLoca}
+          feedImg={feed.feedSrc} />
+          );
+          })}
         </div>
     );
   }

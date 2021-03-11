@@ -1,8 +1,6 @@
 import React from 'react';
 import Comment from './Comment/Comment';
-import FeedList from './FeedList/FeedList';
 import './Feed.scss';
-import './FeedList/FeedList.scss';
 
 class Feed extends React.Component {
   constructor() {
@@ -15,8 +13,6 @@ class Feed extends React.Component {
     };
   }
 
-  
-
   componentDidMount() {
     fetch('http://localhost:3000/data/commentData.json', {
       method: 'GET'
@@ -25,16 +21,6 @@ class Feed extends React.Component {
       .then(data => {
         this.setState({
           commentList: data,     
-        });
-      });
-
-    fetch('http://localhost:3000/data/feedData.json', {
-      method: 'GET'
-    })
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          feedList: data,     
         });
       });
   }
@@ -85,19 +71,49 @@ class Feed extends React.Component {
   };
 
   render() {
-    const { commentList, commentValue, feedList } = this.state;
+    const { commentList, commentValue } = this.state;
+    const { name, profileImg, userLoca, feedImg } = this.props;
     return (
-        <section className="feeds">
-          
-            {feedList.map(feed => {
-              return (
+              <section className="feeds">
                 <article className="feed">
-                  <FeedList
-                  key={feed.id}
-                  name={feed.userName}
-                  profileImg={feed.profileSrc}
-                  userLoca={feed.userLoca}
-                  feedImg={feed.feedSrc} />
+                  <div className="feed-header">
+                    <div className="card">
+                        <img
+                        src={profileImg}
+                        alt="profile"
+                        className="card-img" />
+                      <div className="card-content">
+                        <h3 className="user-name">{name}</h3>
+                        <span className="user-loca">{userLoca}</span>
+                      </div>
+                    </div>
+                    <button type="menu" className="feed-btn">…</button>
+                  </div>
+                  <div className="feed-img">
+                    <img
+                    src={feedImg}
+                    alt="user"
+                    className="user-img"
+                    />
+                  </div>
+                  <div className="feed-footer">
+                    <div className="feed-reaction">
+                      <div className="feed-btns">
+                        <div className="feed-btn">
+                          <i className="far fa-heart" />
+                        </div>
+                        <div className="feed-btn">
+                          <i className="far fa-comment" />
+                        </div>
+                        <div className="feed-btn">
+                          <i className="far fa-paper-plane" />
+                        </div>
+                      </div>
+                      <div className="feed-btn">
+                        <i className="far fa-bookmark" />
+                      </div>
+                    </div>
+                  </div>
                   <div className="feed-article">
                     <div className="feed-content">
                       <h3 className="user-name">wecode-bootcamp</h3>
@@ -138,13 +154,9 @@ class Feed extends React.Component {
                     onClick={this.addComment}>게시</button>
                   </form>
                 </article>
-              );
-            })}
-            
-          
-        </section>
-    );
+              </section>
+            );
   }
-}
+ }
 
 export default Feed;
