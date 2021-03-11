@@ -1,18 +1,39 @@
 import React from 'react';
+import StoryList from './StoryList/StoryList';
 import './Story.scss';
 
 class Story extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      storyList: [],
+    };
+  }
+
+    componentDidMount() {
+    fetch('/data/storyData.json',)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({
+          storyList: data,     
+        });
+      });
+  }
+
   render() {
+  const { storyList } = this.state;
     return (
         <section id="story-nav">
-          <div className="follow-story">
-            <img
-              alt="story"
-              src="https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
-              className="profile-img"
-            />
-            <p className="story-live">Live</p>
-            <p className="follow-name" />
+          <div class="story-contents">
+          {storyList.map(story => {
+            return (
+              <StoryList 
+              key={story.id}
+              name={story.userName}
+              imgSrc={story.profileSrc}
+              isLive={story.isLive} />
+              );
+          })}
           </div>
         </section>
     );
