@@ -1,0 +1,23 @@
+[ 
+    {
+    "id": 1,
+    "userName": "soon.cake",
+    "profileImg" : "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg?fit=640,427",
+    "feedImg": "https://media.vlpt.us/images/realsong/post/94e01321-f7e8-4e89-822a-08a8626b47b5/KakaoTalk_20210217_203104033.jpg",
+    "isLiked": true
+    },
+    {
+    "id": 2,
+    "userName": "songhee",
+    "profileImg" : "https://i.pinimg.com/564x/da/51/c2/da51c26fe3398b0f8314fee17a98e0e7.jpg",
+    "feedImg": "https://media.vlpt.us/images/realsong/post/a60ab26e-13e5-4ad6-8fc5-81f7b6f2e97d/image.png",
+    "isLiked": true
+    },
+    {
+    "id": 3,
+    "userName": "wecode",
+    "profileImg" : "https://imgc.1300k.com/aaaaaib/goods/215024/71/215024713100.jpg?3",
+    "feedImg": "https://files.slack.com/files-pri/TH0U6FBTN-F01RFT5BB5E/img_0632.jpg",
+    "isLiked": true
+  }
+]

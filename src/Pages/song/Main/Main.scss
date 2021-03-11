@@ -1,0 +1,17 @@
+.Main {
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+  }
+
+  .inPad {
+    padding: 10px 15px;
+  }
+
+  .main-center {
+    width: 600px;
+  }
+}

@@ -1,0 +1,28 @@
+.stories {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: var(--main-border);
+  background-color: #ffffff;
+
+  .story {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 8px;
+
+    .story__img {
+      width: 60px;
+      border-radius: 50%;
+    }
+
+    .story__id {
+      padding-top: 7px;
+      font-size: 12px;
+    }
+  }
+}
