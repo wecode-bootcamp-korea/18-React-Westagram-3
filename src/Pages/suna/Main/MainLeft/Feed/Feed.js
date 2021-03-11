@@ -138,7 +138,7 @@ class Feed extends React.Component {
                   </div>
 
                   <form className="input-comment" onSubmit={this.addComment}>
-                    <i className="far fa-smile"></i>
+                    <i className="far fa-smile"/>
                     <textarea
                       aria-label="댓글달기..."
                       placeholder="댓글 달기..."
@@ -148,7 +148,7 @@ class Feed extends React.Component {
                       onChange={this.getInputValue}
                       onKeyPress={this.pressEnter}
                       value={commentValue}
-                    ></textarea>
+                    />
                     <button type="submit"
                     className="comment-submit blue"
                     onClick={this.addComment}>게시</button>
