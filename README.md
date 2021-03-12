@@ -76,12 +76,12 @@ Wecode 18기 인스타그램 클론코딩
 - `git checkout feature/이름`
 - `git merge master`
 
-6. 작업 후 add, commit, push 하기
+7. 작업 후 add, commit, push 하기
 - `git add .`
 - `git commit -m “커밋 메시지“`
 - `git push origin feature/이름`
 
-7. github에서 PR(Pull Request) 보내기
+8. github에서 PR(Pull Request) 보내기
 
 
 ### ✨ 팀원별 깃허브 및 프로젝트 후기
