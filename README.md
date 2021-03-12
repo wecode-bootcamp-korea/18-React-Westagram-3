@@ -1,12 +1,14 @@
-# WestaGram
+# Westagram
 
 Wecode 18기 인스타그램 클론코딩
 
-🎇 공통 구현
+### 🎇 공통 구현
+
 ![](https://user-images.githubusercontent.com/46774456/110879954-3453d200-8321-11eb-8a44-7363d3f94ebf.gif)
+
 ![](https://user-images.githubusercontent.com/46774456/110881796-484d0300-8324-11eb-95c2-aad9e2b74db2.gif)
 
-🎆 추가 구현
+### 🎆 추가 구현
 ![](https://user-images.githubusercontent.com/46774456/110881781-4125f500-8324-11eb-98c3-efb993329c84.gif)
 
 
