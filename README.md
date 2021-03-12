@@ -2,7 +2,9 @@
 
 Wecode 18기 인스타그램 클론코딩
 
-
+![](https://user-images.githubusercontent.com/46774456/110879954-3453d200-8321-11eb-8a44-7363d3f94ebf.gif)
+![](https://user-images.githubusercontent.com/46774456/110881781-4125f500-8324-11eb-98c3-efb993329c84.gif)
+![](https://user-images.githubusercontent.com/46774456/110881796-484d0300-8324-11eb-95c2-aad9e2b74db2.gif)
 
 ## 🎯 프로젝트
 - 주제: React를 사용한 Instagram clone
@@ -80,5 +82,5 @@ Wecode 18기 인스타그램 클론코딩
 
 #### 남궁선아 : [선아님 깃허브](https://github.com/sunaaank) | [선아님 블로그](https://velog.io/@sunaaank/React-instagram) 
 #### 박경현 : [경현님 깃허브](https://github.com/pikatropika) | [경현님 블로그](https://velog.io/@pika/Login-Main-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%B7%B0)
-#### 정승옥 : [승옥님 깃허브](https://github.com/Jeong-seungok) | [승옥님 블로그]()
+#### 정승옥 : [승옥님 깃허브](https://github.com/Jeong-seungok) | [승옥님 블로그](ttps://velog.io/@vsnm25/%EC%9C%84%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-%ED%81%B4%EB%A1%A0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
 #### 최송희 : [송희님 깃허브](https://github.com/iamsonghee)| [송희님 블로그](https://velog.io/@realsong/westagramreview)
