@@ -1,0 +1,32 @@
+#story-nav {
+  position: relative;
+  display: block;
+  align-items: center;
+  width: 612px;
+  margin: auto;
+  padding: 16px 0;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  margin-bottom: 24px;
+  background-color: #fff;
+  .slideWrap {
+
+    .slideList {
+      position: relative;
+      display: flex;
+      width: 100%;
+      margin: auto;
+      overflow-x: hidden;
+
+      .story-contents {
+        display: table;
+        float: left;
+        height: 84px;
+        } 
+    }
+  }
+
+
+  
+  
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id" : 1,
+    "userName": "Python",
+    "profileSrc": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg",
+    "Info": "JavaScript님 외 100000명이 팔로우합니다",
+    "isFollow": false
+  },
+  {
+    "id" : 2,
+    "userName": "JavaScript",
+    "profileSrc": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg",
+    "Info": "React님 외 79427942명이 팔로우합니다",
+    "isFollow": true
+  },
+  {
+    "id" : 3,
+    "userName": "CSS",
+    "profileSrc": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg",
+    "Info": "HTML님 외 10099000명이 팔로우합니다",
+    "isFollow": false
+  },
+  {
+    "id" : 4,
+    "userName": "HTML",
+    "profileSrc": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg",
+    "Info": "CSS님 외 12341234명이 팔로우합니다",
+    "isFollow": false
+  },
+  {
+    "id" : 5,
+    "userName": "React",
+    "profileSrc": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg",
+    "Info": "JavaScript님 외 9999명이 팔로우합니다",
+    "isFollow": true
+  }
+]

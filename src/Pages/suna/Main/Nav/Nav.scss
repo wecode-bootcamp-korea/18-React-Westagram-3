@@ -1,0 +1,88 @@
+nav {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 54px;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  z-index: 1;
+
+  .nav-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 975px;
+    padding: 0 20px;
+    background-color: #fff;
+
+    h1.logo {
+      display: flex;
+      justify-content: center;
+      width: auto;
+      margin: 0;
+      font-size: 1.7em;
+      font-family: "Lobster", cursive;
+      font-weight: 400;
+    }
+
+    .nav-search {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 215px;
+      height: 28px;
+      padding: 7px;
+      margin-left: 120px;
+      color: #828282;
+      background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+      background-position: 65px 5px;
+      background-size: 17px;
+      background-repeat: no-repeat;
+      background-color: #fafafa;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: 300;
+      text-align: center;
+      cursor: text;
+    }
+
+    .nav-serarch:focus {
+      background-position: 4% center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      outline: none;
+    }
+
+    .nav-btns {
+      position: relative;
+      display: flex;
+      padding: 0 0 0 24px;
+
+      .nav-btn {
+        position: relative;
+        display: flex;
+        width: 22px;
+        height: 22px;
+        margin-left: 22px;
+        font-size: 22px;
+
+        .far,
+        .fas {
+          font-size: 22px;
+        }
+        
+        .menu-img {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

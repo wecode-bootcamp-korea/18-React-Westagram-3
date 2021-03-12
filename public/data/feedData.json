@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "userName": "Python",
+    "profileSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png",
+    "userLoca": "지구 어딘가",
+    "feedSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png"
+  },
+  {
+    "id": 2,
+    "userName": "JavaScript",
+    "profileSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdrdWzzpE-ZWqnql3MnFyWm25r9D0Mlseag&usqp=CAU",
+    "userLoca": "ECMASCript 1995",
+    "feedSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdrdWzzpE-ZWqnql3MnFyWm25r9D0Mlseag&usqp=CAU"
+  },
+  {
+    "id": 3,
+    "userName": "React",
+    "profileSrc": "https://reactjs.org/logo-og.png",
+    "userLoca": "위코드 선릉2호점 어딘가",
+    "feedSrc": "https://reactjs.org/logo-og.png"
+  }
+]

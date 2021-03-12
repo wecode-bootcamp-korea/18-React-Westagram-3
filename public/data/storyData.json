@@ -1,0 +1,66 @@
+[
+  {
+    "id" : 1,
+    "userName": "Python",
+    "profileSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png",
+    "isLive": false
+  },
+  {
+    "id" : 2,
+    "userName": "JavaScript",
+    "profileSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdrdWzzpE-ZWqnql3MnFyWm25r9D0Mlseag&usqp=CAU",
+    "isLive": true
+  },
+  {
+    "id" : 3,
+    "userName": "React",
+    "profileSrc": "https://reactjs.org/logo-og.png",
+    "isLive": false
+  },
+    {
+    "id" : 4,
+    "userName": "Python2",
+    "profileSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png",
+    "isLive": false
+  },  {
+    "id" : 5,
+   "userName": "Python3",
+    "profileSrc": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/768px-Python-logo-notext.svg.png",
+    "isLive": false
+  },  {
+    "id" : 6,
+    "userName": "React2",
+    "profileSrc": "https://reactjs.org/logo-og.png",
+    "isLive": false
+  },  {
+    "id" : 7,
+    "userName": "React3",
+    "profileSrc": "https://reactjs.org/logo-og.png",
+    "isLive": false
+  },  {
+    "id" : 8,
+    "userName": "React4",
+    "profileSrc": "https://reactjs.org/logo-og.png",
+    "isLive": false
+  },  {
+    "id" : 9,
+    "userName": "React5",
+    "profileSrc": "https://reactjs.org/logo-og.png",
+    "isLive": false
+  },  {
+    "id" : 10,
+    "userName": "JavaScript2",
+    "profileSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdrdWzzpE-ZWqnql3MnFyWm25r9D0Mlseag&usqp=CAU",
+    "isLive": false
+  },  {
+    "id" : 11,
+    "userName": "JavaScript3",
+    "profileSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdrdWzzpE-ZWqnql3MnFyWm25r9D0Mlseag&usqp=CAU",
+    "isLive": false
+  },  {
+    "id" : 12,
+    "userName": "JavaScrip4",
+    "profileSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKdrdWzzpE-ZWqnql3MnFyWm25r9D0Mlseag&usqp=CAU",
+    "isLive": false
+  }
+]

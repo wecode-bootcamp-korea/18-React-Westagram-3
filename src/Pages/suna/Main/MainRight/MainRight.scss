@@ -1,0 +1,64 @@
+.main-right {
+  display: inline-block;
+  position: fixed;
+  top: 88px;
+  width: 293px;
+  height: 100vh;
+  margin-bottom: 30px;
+  padding: 0;
+
+  .profile-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 18px 0 10px 0;
+
+    .card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: auto;
+
+      .profile-img {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: auto;
+        line-height: 18px;
+        margin-left: 12px;
+      }
+    }
+  }
+
+  .user-recommend {
+    margin-bottom: 12px;
+
+    .recommend-title {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 19px;
+      width: 100%;
+      margin-top: 12px;
+      padding: 4px 0 4px;
+      .bold {
+        width: 48px;
+      }
+
+      p {
+        color: #262626;
+      }
+    }
+  }
+}
