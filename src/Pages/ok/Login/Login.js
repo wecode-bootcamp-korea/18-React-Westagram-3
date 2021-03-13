@@ -1,5 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import LoginForm from "./components/LoginForm";
+import SignUpForm from "./components/SignUpForm";
+import { UrlPath } from "../UrlPath"; // 데이터 요청시 사용
 import "./Login.scss";
 
 class LoginOk extends React.Component {
@@ -7,67 +9,94 @@ class LoginOk extends React.Component {
     super(props);
   }
   state = {
-    email: "",
-    password: "",
-    checkValidation: false,
+    checkNewUser: false,
+    randomColor: null,
   };
-  InputChange = e => {
-    const { name, value } = e.target;
+
+  signUpUserInfo = async (username, email, phoneNumber, password) => {
+    const { checkNewUser } = this.state;
+    // 데이터 요청시 사용
+    await fetch(`${UrlPath}/account/sign-up`, {
+      method: "POST",
+      body: JSON.stringify({
+        username: username,
+        email: email,
+        phone_number: phoneNumber,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === "SUCCESS") {
+          alert("회원가입 성공!!");
+          this.setState({
+            checkNewUser: checkNewUser,
+          });
+        } else {
+          alert("회원가입 실패!!");
+          return false;
+        }
+      });
+  };
+
+  checkUserInfo = async (email, password) => {
+    // 데이터 요청시 사용
+    await fetch(`${UrlPath}/account/login`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(res => {
+        if (res.message === "SUCCESS") {
+          alert("로그인 성공!!");
+          localStorage.setItem("token", JSON.stringify(res.token));
+          localStorage.setItem("user", JSON.stringify(res.username));
+          return this.props.history.push("/main-ok");
+        } else {
+          alert("로그인 실패!!");
+          return false;
+        }
+      });
+  };
+
+  formChange = () => {
+    const { checkNewUser } = this.state;
     this.setState({
-      [name]: value,
+      checkNewUser: !checkNewUser,
     });
   };
-  LoginClick = e => {
-    return !this.state.checkValidation ? e.preventDefault() : true;
-  };
-  LoginKeyUp = e => {
-    const isValid =
-      this.state.email.includes("@") && this.state.password.length >= 5;
-    this.setState({
-      checkValidation: isValid ? true : false,
-    });
-    return e.keyCode === 13 && this.state.checkValidation
-      ? this.props.history.push("/main-ok")
-      : false;
-  };
+
   render() {
+    const { checkNewUser } = this.state;
     return (
       <section className="login">
         <div className="login-box">
-          <div className="login-form">
-            <h1 className="logo">Westagram</h1>
-            <input
-              id="username"
-              name="email"
-              className="login-input"
-              type="text"
-              placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={this.state.email}
-              onChange={this.InputChange}
-            />
-            <input
-              id="password"
-              name="password"
-              className="login-input"
-              type="password"
-              placeholder="비밀번호"
-              value={this.state.password}
-              onChange={this.InputChange}
-              onKeyUp={this.LoginKeyUp}
-            />
-            <Link
-              to="/main-ok"
-              className={
-                "login-button " + (this.state.checkValidation ? "active" : "")
-              }
-              onClick={this.LoginClick}
-            >
-              로그인
-            </Link>
-            <a href="#" className="login-help">
-              비밀번호를 잊으셨나요?
-            </a>
-          </div>
+          {checkNewUser ? (
+            <SignUpForm
+              signUpUserInfo={this.signUpUserInfo}
+              formChange={this.formChange}
+            ></SignUpForm>
+          ) : (
+            <LoginForm
+              checkUserInfo={this.checkUserInfo}
+              formChange={this.formChange}
+            ></LoginForm>
+          )}
+          <img
+            className="appstore"
+            src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_korean-ko.png/4a5c9d62d51b.png"
+            alt="다운로드"
+          />
+          <img
+            className="android"
+            src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_korean-ko.png/f155b664a93b.png"
+            alt="다운로드"
+          />
         </div>
       </section>
     );

@@ -1,0 +1,78 @@
+.sign-up-form {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  h1.logo {
+    margin: 30px 0 25px;
+  }
+
+  svg {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    color: #0095f6;
+    opacity: 0.3;
+    transition: all 0.2s;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .sign-up-list {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+
+    .form-title {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      font-size: 14px;
+      transform: translateY(-50%);
+      transition: all 0.2s;
+      opacity: 0.2;
+
+      &.has-value {
+        top: -7px;
+        left: 5px;
+        font-size: 10px;
+        opacity: 1;
+      }
+    }
+
+    .form-write {
+      border: none;
+      box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+      transition: all 0.2s;
+    }
+
+    &.correct {
+      .form-write {
+        border-bottom: 1px solid green;
+      }
+      .form-title {
+        color: green;
+      }
+    }
+
+    &.wrong {
+      .form-write {
+        border-bottom: 1px solid red;
+      }
+
+      .form-title {
+        color: red;
+      }
+    }
+  }
+
+  .finish-sign-up {
+    margin: 10px 0;
+    cursor: pointer;
+  }
+}
