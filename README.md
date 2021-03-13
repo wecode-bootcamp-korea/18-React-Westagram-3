@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Westagram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Wecode 18기 인스타그램 클론코딩
 
-## Available Scripts
+### 🎇 공통 구현
 
-In the project directory, you can run:
+![](https://user-images.githubusercontent.com/46774456/110879954-3453d200-8321-11eb-8a44-7363d3f94ebf.gif)
 
-### `npm start`
+![](https://user-images.githubusercontent.com/46774456/110881796-484d0300-8324-11eb-95c2-aad9e2b74db2.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 🎆 추가 구현
+![](https://user-images.githubusercontent.com/46774456/110881781-4125f500-8324-11eb-98c3-efb993329c84.gif)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## 🎯 프로젝트
+- 주제: React를 사용한 Instagram clone
+  - CRA를 사용한 초기 세팅
+  - 4명의 팀원들이 공동 component, scss 사용 및 관리
+  - git을 사용한 첫 번째 협업
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📅 프로젝트 기간
 
-### `npm run build`
+- 하드코딩 : 2021.02.15 - 2021.02.26
+- React : 2021.03.02 - 2021.03.12
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🎨 팀원별 작업 현황
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 공통
+  - 로그인/메인 페이지 레이아웃
+  - `로그인 페이지` 내 회원가입/로그인 기능 서버 연동
+  - `로그인 페이지` id, pw 입력 시 유효성 확인 후 로그인 버튼 활성화
+  - `메인 페이지` Mock Data 활용 피드 및 댓글 정보 세팅
+  - `메인 페이지` 댓글 내용 입력 후 Enter press, 혹은 게시 버튼 클릭 시 댓글 추가 기능
+  - `메인 페이지` 문자 입력 시 게시 버튼 활성화 기능
+  - `메인 페이지` 컴포넌트 분리
+- 남궁선아
+  - `메인 페이지` Mock Data 활용 추천 리스트 및 스토리 정보 세팅
+  - `메인 페이지` 댓글 좋아요 기능
+- 박경현
+- 정승옥
+  - `메인 페이지` 게시물 등록
+  - `메인 페이지` 피드 삭제 기능
+  - `메인 페이지` 추천 리스트 팔로우 기능
+  - `메인 페이지` 사용자 검색 기능
+- 최송희
+  - `메인 페이지` 피드 좋아요 및 북마크 기능
+  - `메인 페이지` 댓글 좋아요 기능
 
-### `npm run eject`
+###  🔧 기술 스택
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- HTML
+- CSS
+- JavaScript(ES6+)
+- React
+- SCSS
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 🎢 작업 순서 (git)
+1. 프로젝트 초기 세팅 후 git repository clone하기
+- `git clone https://github.com/wecode-bootcamp-korea/18-React-Westagram-3.git`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. 팀원 각자 branch 만들기
+- `git branch feature/이름`
 
-## Learn More
+3. 본인의 브랜치로 checkout하기
+- `git checkout feature/이름`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. github master 브랜치가 update되었는지 확인 후 update되었다면 master 브랜치로 checkout하기.
+- `git checkout master`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. update된 코드 pull 받기
+- `git pull origin master`
 
-### Code Splitting
+6. 본인의 브랜치로 다시 이동해서 master branch merge하기
+- `git checkout feature/이름`
+- `git merge master`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+7. 작업 후 add, commit, push 하기
+- `git add .`
+- `git commit -m “커밋 메시지“`
+- `git push origin feature/이름`
 
-### Analyzing the Bundle Size
+8. github에서 PR(Pull Request) 보내기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### ✨ 팀원별 깃허브 및 프로젝트 후기
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 남궁선아 : [선아님 깃허브](https://github.com/sunaaank) | [선아님 블로그](https://velog.io/@sunaaank/React-instagram) 
+- 박경현 : [경현님 깃허브](https://github.com/pikatropika) | [경현님 블로그](https://velog.io/@pika/Login-Main-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A6%AC%EB%B7%B0)
+- 정승옥 : [승옥님 깃허브](https://github.com/Jeong-seungok) | [승옥님 블로그](https://velog.io/@vsnm25/%EC%9C%84%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8-%ED%81%B4%EB%A1%A0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8) 
+- 최송희 : [송희님 깃허브](https://github.com/iamsonghee)| [송희님 블로그](https://velog.io/@realsong/westagramreview)
