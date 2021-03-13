@@ -1,0 +1,66 @@
+.feeds {
+  margin: 15px 0;
+  background-color: #eeeeee;
+
+  .feed {
+    margin-bottom: 50px;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+  }
+
+  .profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-weight: 700;
+  }
+
+  .profile {
+    img {
+      width: 30px;
+      margin: 10px;
+      border-radius: 50%;
+    }
+  }
+
+  .feed > img {
+    width: 100%;
+  }
+
+  .dots {
+    position: absolute;
+    right: 15px;
+    font-size: 16px;
+  }
+
+  .commentsBox {
+    height: auto;
+    padding: 10px;
+  }
+
+  .userId {
+    margin-right: 5px;
+    font-weight: 700;
+  }
+
+  .commentsBox {
+    ul {
+      list-style: none;
+      padding-left: 0px;
+      li {
+        height: 25px;
+      }
+    }
+  }
+
+  .commentInput {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    border-top: 1px solid #c0c0c0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}

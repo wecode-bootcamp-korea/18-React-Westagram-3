@@ -1,0 +1,25 @@
+.stories {
+  display: flex;
+  align-items: center;
+  height: 90px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #c0c0c0;
+  .story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    margin-right: 10px;
+    img {
+      width: 50px;
+      margin-bottom: 3px;
+      border-radius: 50%;
+    }
+    span {
+      background-color: white;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}

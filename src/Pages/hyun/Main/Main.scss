@@ -1,0 +1,25 @@
+.MainHyun {
+  * {
+    box-sizing: border-box;
+    // margin: 0;
+    font-size: 14px;
+    color: #424242;
+  }
+
+  main {
+    padding-top: 60px; /*상단바 고정시켜서 가려지는 만큼*/
+    background-color: #eeeeee;
+  }
+
+  .centerBox {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px 0;
+  }
+
+  .storiesAndFeeds {
+    width: 500px;
+  }
+}
