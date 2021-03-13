@@ -1,0 +1,39 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 2;
+  padding: 10px;
+  background-color: white;
+  font-family: "Lobster", cursive;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    h1 {
+      font-size: 25px;
+    }
+  }
+
+  .searchInput {
+    width: 190px;
+    height: 27px;
+    background-color: #eeeeee;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    text-align: center;
+  }
+
+  .icons {
+    img {
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+    }
+  }
+}

@@ -1,20 +1,14 @@
 [
   {
-    "id": 1,
-    "userName": "wecode",
-    "content": "Welcome to world best coding bootcamp!",
-    "isLiked": true
+    "userId": "hoholily",
+    "comment": "Mock Data 뿌셔뿌셔🔥🔥🔥"
   },
   {
-    "id": 2,
-    "userName": "joonsikyang",
-    "content": "Hi there.",
-    "isLiked": false
+    "userId": "wecode",
+    "comment": "Welcome to world best coding bootcamp!🏝🏝🏝🏝"
   },
   {
-    "id": 3,
-    "userName": "jayPark",
-    "content": "Hey.",
-    "isLiked": false
+    "userId": "dana",
+    "comment": "오늘 점심 뭐 먹지👀"
   }
 ]

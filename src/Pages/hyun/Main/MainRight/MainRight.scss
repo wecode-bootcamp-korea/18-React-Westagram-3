@@ -1,0 +1,71 @@
+.mainRight {
+  width: 320px;
+  margin-left: 20px;
+
+  .myId {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: 700;
+    img {
+      width: 50px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+  }
+
+  .recommends {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+    font-weight: 700;
+  }
+
+  .recommend {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    img {
+      width: 30px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+  }
+
+  .recommendText {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grey {
+    color: #b8b8b8;
+    font-size: 12px;
+  }
+
+  .recommendText {
+    .grey {
+      font-size: 10px;
+      font-weight: 400;
+    }
+  }
+
+  .follow {
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    color: #3eaffa;
+  }
+
+  .copyright {
+    padding: 10px;
+    span {
+      font-size: 11px;
+      color: #b8b8b8;
+    }
+  }
+}

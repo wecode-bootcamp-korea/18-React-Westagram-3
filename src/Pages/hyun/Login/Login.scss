@@ -7,16 +7,16 @@
     position: relative;
     width: 550px;
     height: 600px;
-    margin: 100px auto; 
+    margin: 100px auto;
     padding: 70px;
     background-color: white;
     border: 1.5px solid #cecece;
     border-radius: 2px;
   }
   h1 {
-    margin : 0 0 50px 0;
+    margin: 0 0 50px 0;
     background-color: white;
-    font-family: 'Lobster', cursive;
+    font-family: "Lobster", cursive;
     font-size: 60px;
     text-align: center;
   }
@@ -31,10 +31,10 @@
     padding: 8px;
     border: 1px solid #cecece;
     border-radius: 5px;
-    font-size: 14px;    
+    font-size: 14px;
   }
-  input::placeholder {  
-    color: #a1a1a1; 
+  input::placeholder {
+    color: #a1a1a1;
   }
   .btnOn {
     display: block;
@@ -63,9 +63,9 @@
     opacity: 0.3;
   }
   a.text {
-    position: absolute; 
+    position: absolute;
     left: 0;
-    right: 0; 
+    right: 0;
     bottom: 30px;
     background-color: white;
     color: #2929ad;
