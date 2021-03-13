@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../../Footer/Footer";
+import RecommendList from "./RecommendList";
+import { UrlPath } from "../../../../UrlPath";
 import "./MainRight.scss";
 
 class MainRight extends Component {
@@ -8,9 +10,35 @@ class MainRight extends Component {
     super(props);
   }
   state = {
-    notFriend: this.props.userData.filter(e => e.friend === false),
+    user: "",
+    recommendList: [],
   };
+
+  LogoutUser = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+  };
+
+  componentDidMount() {
+    this.setState({
+      user: JSON.parse(localStorage.getItem("user")),
+    });
+    // 데이터 요청시 사용
+    fetch(`${UrlPath}/account/recommended`, {
+      method: "GET",
+      headers: {
+        Authorization: JSON.parse(localStorage.getItem("token")),
+      },
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          recommendList: res,
+        });
+      });
+  }
   render() {
+    const { user } = this.state;
     return (
       <aside className="main-right">
         <div className="right-user">
@@ -19,30 +47,23 @@ class MainRight extends Component {
             alt="프로필"
           />
           <div className="user-info">
-            <Link>seung_ok12</Link>
-            <span>정승옥</span>
+            <Link>{user}</Link>
+            <span>테스트 계정</span>
           </div>
-          <Link>전환</Link>
+          <Link to="/login-ok" onClick={this.LogoutUser}>
+            전환
+          </Link>
         </div>
         <div className="right-recommend">
           <div className="recommend-title">
             <span>회원님을 위한 추천</span>
             <Link>모두 보기</Link>
           </div>
-          {this.state.notFriend.map((recommdendUser, index) => {
-            return (
-              <div key={index} className="recommend-list">
-                <img src={recommdendUser.imgUrl} alt="사이드 이미지" />
-                <div className="list-info">
-                  <Link>{recommdendUser.username}</Link>
-                  <span>회원님을 팔로우합니다</span>
-                </div>
-                <Link>팔로우</Link>
-              </div>
-            );
+          {this.state.recommendList.map((recommend, index) => {
+            return <RecommendList key={index} data={recommend} />;
           })}
         </div>
-        <Footer></Footer>
+        <Footer />
       </aside>
     );
   }

@@ -2,51 +2,62 @@
   position: fixed;
   top: 84px;
   left: calc(50% + 320px);
-  transform: translateX(-50%);
   width: 293px;
   height: 100%;
+  transform: translateX(-50%);
+
   a {
     text-decoration: none;
   }
+
   .right-user {
     display: flex;
     align-items: center;
     margin-top: 23px;
+
     > img {
       width: 56px;
       border-radius: 50%;
     }
+
     > a {
       font-size: 12px;
       font-weight: 700;
       color: #1d99f6;
     }
+
     .user-info {
       flex: 1;
+      font-size: 14px;
       line-height: 18px;
       text-indent: 20px;
-      font-size: 14px;
+
       a {
         font-weight: 700;
         color: #262626;
       }
+
       span {
         display: block;
         color: #a1a1a1;
       }
     }
   }
+
   .right-recommend {
     margin-top: 28px;
+
     .recommend-title {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
       > span {
         font-size: 14px;
         font-weight: 700;
         color: #a2a2a2;
       }
+
       > a {
         margin-right: -4px;
         font-size: 12px;
@@ -54,35 +65,42 @@
         color: #262626;
       }
     }
+
     .recommend-list {
       display: flex;
       align-items: center;
       padding-left: 3px;
       margin-top: 12px;
+
       > img {
         width: 32px;
         height: 32px;
         border-radius: 50%;
         object-fit: cover;
       }
+
       > a {
         font-size: 12px;
         font-weight: 700;
         color: #1d99f6;
       }
+
       .list-info {
         flex: 1;
         font-size: 16px;
         text-indent: 10px;
         line-height: 18px;
+
         > a {
           font-size: 14px;
           font-weight: 700;
           color: #262626;
         }
+
         > a:hover {
           text-decoration: underline;
         }
+
         > span {
           font-size: 12px;
           color: #8e8e8e;

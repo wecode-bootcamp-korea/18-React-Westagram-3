@@ -1,28 +1,30 @@
 import React, { Component } from "react";
-import FeedTitle from "./FeedComponent/FeedTitle";
-import FeedImg from "./FeedComponent/FeedImg";
-import FeedComment from "../Feed/FeedComponent/FeedComment";
+import FeedTitle from "./FeedTitle/FeedTitle";
+import FeedImg from "./FeedImg/FeedImg";
+import FeedComment from "./FeedComment/FeedComment";
 import "./Feed.scss";
 
 class Feed extends Component {
   render() {
+    const { data, toggleOption } = this.props;
     const titleData = {
-      username: this.props.data.username,
-      userplace: this.props.data.userplace,
-      imgURL: this.props.data.imgURL1,
-      storyActive: this.props.data.storyActive,
+      posting_id: data.posting_id,
+      username: data.username,
     };
-    const imgData = { imgURL: this.props.data.imgURL2 };
+    const imgData = { imgURL: data.image_urls };
     const commentData = {
-      commentData: this.props.data.commentData,
-      comments: this.props.data.comments,
-      likes: this.props.data.like,
+      postingId: data.posting_id,
+      username: data.username,
+      comments: data.comments,
+      content: data.content,
+      likes_count: data.like_count,
+      already_like: data.already_like,
     };
     return (
       <article className="content-feed">
-        <FeedTitle data={titleData}></FeedTitle>
-        <FeedImg data={imgData}></FeedImg>
-        <FeedComment data={commentData}></FeedComment>
+        <FeedTitle data={titleData} toggleOption={toggleOption} />
+        <FeedImg data={imgData} />
+        <FeedComment data={commentData} />
       </article>
     );
   }

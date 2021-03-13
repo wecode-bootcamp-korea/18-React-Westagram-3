@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./FeedImg.scss";
+
 class FeedImg extends Component {
   constructor(props) {
     super(props);
@@ -9,29 +10,35 @@ class FeedImg extends Component {
     leftValue: 0,
     heightValue: 500,
     prevBtnActive: false,
-    nextBtnActive: this.props.data.imgURL.length >= 2 ? true : false,
+    nextBtnActive: false,
   };
+
   slideMove = e => {
     const {
       className,
       parentElement: { clientWidth },
     } = e.target;
-    const minLeftValue = clientWidth * (this.props.data.imgURL.length - 1) * -1;
+    const {
+      data: { imgURL },
+    } = this.props;
+    const { leftValue } = this.state;
+    const minLeftValue = clientWidth * (imgURL.length - 1) * -1;
     this.setState(
       {
         leftValue: className.includes("prev")
-          ? this.state.leftValue + clientWidth
-          : this.state.leftValue - clientWidth,
+          ? leftValue + clientWidth
+          : leftValue - clientWidth,
         prevBtnActive: true,
         nextBtnActive: true,
       },
       () => {
-        if (this.state.leftValue === 0) {
+        const { leftValue } = this.state;
+        if (leftValue === 0) {
           this.setState({
             leftValue: 0,
             prevBtnActive: false,
           });
-        } else if (this.state.leftValue === minLeftValue) {
+        } else if (leftValue === minLeftValue) {
           this.setState({
             leftValue: minLeftValue,
             nextBtnActive: false,
@@ -40,11 +47,23 @@ class FeedImg extends Component {
       }
     );
   };
+
+  componentDidMount() {
+    const {
+      data: { imgURL },
+    } = this.props;
+    this.setState({
+      nextBtnActive: imgURL.length > 1 ? true : false,
+    });
+  }
+
   render() {
     const { imgURL } = this.props.data;
+    const { leftValue, prevBtnActive, nextBtnActive } = this.state;
+
     return (
       <div className="feed-img" ref={this.Slide}>
-        <ul className="feed-slide" style={{ left: this.state.leftValue }}>
+        <ul className="feed-slide" style={{ left: leftValue }}>
           {imgURL.map((url, index) => {
             return (
               <li key={index} className="slide-list">
@@ -55,17 +74,13 @@ class FeedImg extends Component {
         </ul>
         <div className="slide-button-wrap">
           <Link
-            className={
-              "slide-button prev " + (this.state.prevBtnActive ? "active" : "")
-            }
+            className={`slide-button prev ${prevBtnActive ? "active" : ""}`}
             onClick={this.slideMove}
-          ></Link>
+          />
           <Link
-            className={
-              "slide-button next " + (this.state.nextBtnActive ? "active" : "")
-            }
+            className={`slide-button next ${nextBtnActive ? "active" : ""}`}
             onClick={this.slideMove}
-          ></Link>
+          />
         </div>
       </div>
     );

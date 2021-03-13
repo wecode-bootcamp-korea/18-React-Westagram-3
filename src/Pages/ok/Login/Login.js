@@ -80,12 +80,12 @@ class LoginOk extends React.Component {
             <SignUpForm
               signUpUserInfo={this.signUpUserInfo}
               formChange={this.formChange}
-            ></SignUpForm>
+            />
           ) : (
             <LoginForm
               checkUserInfo={this.checkUserInfo}
               formChange={this.formChange}
-            ></LoginForm>
+            />
           )}
           <img
             className="appstore"

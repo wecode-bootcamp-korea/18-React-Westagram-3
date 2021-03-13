@@ -9,14 +9,15 @@ class StoryList extends Component {
   state = {
     leftValue: 0,
     gap: 0,
-    storyActive: this.props.userData.filter(user => user.storyActive === true),
   };
+
   storyMove = e => {
     const { className } = e.target;
+    const { leftValue } = this.state;
+    const { userData } = this.props;
+    const storyActivUsers = userData.filter(data => data.storyActive === true);
     const gap =
-      this.state.storyActive.length * 81 -
-      this.storyWrap.current.clientWidth +
-      15;
+      storyActivUsers.length * 81 - this.storyWrap.current.clientWidth + 15;
     const moveSize =
       this.storyWrap.clientWidth < 260
         ? this.storyWrap.clientWidth
@@ -27,39 +28,42 @@ class StoryList extends Component {
       {
         gap,
         leftValue: className.includes("story-prev")
-          ? this.state.leftValue + moveSize
-          : this.state.leftValue - moveSize,
+          ? leftValue + moveSize
+          : leftValue - moveSize,
       },
       () => {
+        const { leftValue, gap } = this.state;
         this.setState({
           leftValue:
-            this.state.leftValue > 0
-              ? 0
-              : this.state.leftValue < this.state.gap * -1
-              ? this.state.gap * -1
-              : this.state.leftValue,
+            leftValue > 0 ? 0 : leftValue < gap * -1 ? gap * -1 : leftValue,
         });
       }
     );
   };
+
   componentDidMount() {
+    const { userData } = this.props;
+    const storyActivUsers = userData.filter(data => data.storyActive === true);
     const gap =
-      this.state.storyActive.length * 81 -
-      this.storyWrap.current.clientWidth +
-      15;
+      storyActivUsers.length * 81 - this.storyWrap.current.clientWidth + 15;
     this.setState({
       gap,
     });
   }
+
   render() {
+    const { leftValue, gap } = this.state;
+    const { userData } = this.props;
+    const storyActivUsers = userData.filter(data => data.storyActive === true);
+
     return (
       <div className="content-story">
         <ul
           className="story-wrap"
-          style={{ left: this.state.leftValue }}
+          style={{ left: leftValue }}
           ref={this.storyWrap}
         >
-          {this.state.storyActive.map((storyUser, index) => {
+          {storyActivUsers.map((storyUser, index) => {
             return (
               <li key={index} className="story-list">
                 <div className="story-box story-active">
@@ -71,19 +75,15 @@ class StoryList extends Component {
           })}
         </ul>
         <button
-          className={
-            "story-button story-prev " +
-            (this.state.leftValue < 0 ? "active" : "")
-          }
+          className={`story-button story-prev ${leftValue < 0 ? "active" : ""}`}
           onClick={this.storyMove}
-        ></button>
+        />
         <button
-          className={
-            "story-button story-next " +
-            (this.state.leftValue > this.state.gap * -1 ? "active" : "")
-          }
+          className={`story-button story-next ${
+            leftValue > gap * -1 ? "active" : ""
+          }`}
           onClick={this.storyMove}
-        ></button>
+        />
       </div>
     );
   }

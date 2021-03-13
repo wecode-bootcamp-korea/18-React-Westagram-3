@@ -12,30 +12,35 @@ class CommentList extends Component {
   state = {
     heartClick: false,
   };
+
   toggleHeart = () => {
+    const { heartClick } = this.state;
     this.setState({
-      heartClick: !this.state.heartClick,
+      heartClick: !heartClick,
     });
   };
+
   render() {
-    const { name, comment } = this.props.data;
+    const { heartClick } = this.state;
+    const {
+      data: { username, content, comment_id },
+      toggleOption,
+    } = this.props;
     return (
       <li className="list-other">
         <p className="comment-wrap">
-          <Link className="other-main">{name}</Link>
-          <span className="comment-text">{comment}</span>
+          <Link className="other-main">{username}</Link>
+          <span className="comment-text">{content}</span>
         </p>
         <FontAwesomeIcon
-          style={
-            this.state.heartClick ? { color: "red" } : { color: "#262626" }
-          }
-          icon={this.state.heartClick ? fasHeart : farHeart}
+          style={{ color: heartClick ? "red" : "#262626" }}
+          icon={heartClick ? fasHeart : farHeart}
           onClick={this.toggleHeart}
-        ></FontAwesomeIcon>
+        />
         <span
           className="delete-wrap comment"
           onClick={e => {
-            this.props.togglePop(e, this.props.commentId);
+            toggleOption(e, comment_id);
           }}
         >
           <span className="delete-btn"></span>
