@@ -1,0 +1,87 @@
+.comments-list {
+  margin-top: 10px;
+  &.over-sentence {
+    max-height: 120px;
+    overflow: hidden;
+  }
+
+  > li {
+    position: relative;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #262626;
+
+    a {
+      color: #262626;
+      text-decoration: none;
+    }
+  }
+
+  span > a {
+    font-weight: 700;
+  }
+
+  .user-main,
+  .other-main {
+    margin-right: 5px;
+  }
+
+  .like-main:hover,
+  .user-main:hover,
+  .other-main:hover {
+    text-decoration: underline;
+  }
+
+  .list-user {
+    .user-main {
+      font-weight: 700;
+    }
+  }
+
+  .list-comments {
+    span > a {
+      font-weight: normal;
+    }
+  }
+
+  .list-other {
+    .delete-wrap {
+      opacity: 0;
+      transition: all 0.2s;
+    }
+
+    &:hover .delete-wrap {
+      opacity: 1;
+    }
+
+    .comment-wrap {
+      display: flex;
+      justify-content: flex-start;
+      max-width: 525px;
+
+      .other-main {
+        font-weight: 700;
+      }
+
+      .comment-text {
+        max-width: 415px;
+        word-break: break-all;
+      }
+
+      &.over-sentence .comment-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    > svg {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+}

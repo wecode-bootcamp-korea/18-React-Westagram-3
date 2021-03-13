@@ -1,0 +1,36 @@
+footer {
+  margin-top: 28px;
+  color: #cbcbcb;
+  font-size: 11px;
+  > p {
+    margin-top: 20px;
+    font-weight: 700;
+  }
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    height: 36px;
+    align-items: center;
+    .footer-list {
+      position: relative;
+      padding-right: 6px;
+      a {
+        color: #cbcbcb;
+        text-decoration: none;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 1px;
+        background: #cbcbcb;
+      }
+      &:last-of-type::after {
+        display: none;
+      }
+    }
+  }
+}

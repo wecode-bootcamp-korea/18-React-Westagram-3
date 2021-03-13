@@ -1,0 +1,83 @@
+.feed-comments {
+  position: relative;
+  padding: 10px;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  background: #fff;
+
+  .comments-reaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+      svg {
+        margin-right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      svg:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  .list-time {
+    font-size: 10px;
+  }
+
+  .more-btn {
+    position: absolute;
+    bottom: 35px;
+    right: 78px;
+    font-size: 14px;
+    opacity: 0.2;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .more-btn:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+}
+
+.feed-add {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  background: #fff;
+
+  .fa-smile {
+    font-size: 24px;
+  }
+
+  > input {
+    flex: 1;
+    height: 15px;
+    padding: 0;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    overflow: visible;
+  }
+
+  .add-btn {
+    font-size: 14px;
+    text-decoration: none;
+    color: #0095f6;
+    opacity: 0.3;
+    transition: all 0.3s;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}

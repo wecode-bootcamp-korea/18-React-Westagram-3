@@ -1,0 +1,40 @@
+.feed-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  border: 1px solid #dbdbdb;
+  background: #fff;
+
+  .feed-profile {
+    display: flex;
+    border-radius: 50%;
+
+    > img {
+      width: 32px;
+      height: 32px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .feed-user {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+
+    > div {
+      padding: 1px;
+    }
+
+    .user-name {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .user-place {
+      font-size: 12px;
+    }
+  }
+}
